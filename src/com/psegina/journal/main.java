@@ -2,6 +2,9 @@ package com.psegina.journal;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 /*
  * TODO
@@ -26,13 +29,29 @@ import android.os.Bundle;
  *
  */
 public class main extends Activity {
-    /** Called when the activity is first created. */
+   private static Button mButtonNew;
+	
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Your latest entries");
         
-        setContentView(R.layout.main);
+        OnClickListener mOnClickListener = new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				switch(v.getId()){
+				case R.id.MainNewButton:
+					
+					break;
+				}
+			}
+		};
+        
+        setContentView(R.layout.main);        
+        mButtonNew = (Button) findViewById(R.id.MainNewButton);
+        
+        mButtonNew.setOnClickListener(mOnClickListener);
         
     }
 }
