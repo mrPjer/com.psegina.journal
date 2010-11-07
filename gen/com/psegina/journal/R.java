@@ -22,6 +22,7 @@ public final class R {
     public static final class layout {
         public static final int main=0x7f030000;
         public static final int quickinput=0x7f030001;
+        public static final int singlejournalentry=0x7f030002;
     }
     public static final class string {
         public static final int MainNewButtonLabel=0x7f040007;
