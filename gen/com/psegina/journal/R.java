@@ -26,6 +26,8 @@ public final class R {
     }
     public static final class string {
         public static final int MainNewButtonLabel=0x7f040007;
+        public static final int MenuAbout=0x7f040008;
+        public static final int MenuSupport=0x7f040009;
         public static final int QuickInputCancel=0x7f040004;
         public static final int QuickInputContentHint=0x7f040006;
         public static final int QuickInputSubmit=0x7f040003;

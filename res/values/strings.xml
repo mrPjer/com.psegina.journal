@@ -11,4 +11,6 @@
 
 		<string name="MainNewButtonLabel">New Entry</string>
 
+		<string name="MenuAbout">About</string>
+		<string name="MenuSupport">Support</string>
 </resources>

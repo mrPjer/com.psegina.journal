@@ -3,6 +3,7 @@ package com.psegina.journal;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -56,4 +57,12 @@ public class main extends Activity {
         mButtonNew.setOnClickListener(mOnClickListener);
         
     }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+    	menu.add(R.string.MenuSupport).setIcon(android.R.drawable.btn_star_big_off);
+    	menu.add(R.string.MenuAbout).setIcon(android.R.drawable.ic_menu_info_details);
+    	return true;
+    }
+    
 }
