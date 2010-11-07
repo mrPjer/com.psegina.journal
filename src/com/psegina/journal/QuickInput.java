@@ -11,10 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /*
  * TODO
- * Create the submit() method
  * Add AutoComplete for the tag field based on existing entries
  */
 
@@ -110,8 +110,8 @@ public class QuickInput extends Activity {
 	 * This function submits the data into the database.
 	 */
 	private void submit(){
-		//TODO
-		share("S", "T");
+		JournalEntry entry = new JournalEntry(""+mBodyField.getText(), ""+mTagField.getText());
+		entry.submit();
 		finish();
 	}
 	
