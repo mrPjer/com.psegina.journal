@@ -2,10 +2,6 @@ package com.psegina.journal;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
 /*
  * TODO
@@ -37,21 +33,6 @@ public class main extends Activity {
         setTitle("Your latest entries");
         
         setContentView(R.layout.main);
-        
-                final EditText qi = (EditText) findViewById(R.id.quickInput);
-        qi.setOnEditorActionListener(new OnEditorActionListener() {
-        	@Override
-        	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        		// On keypad ENTER
-        		if (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-        			JournalEntry entry = new JournalEntry(qi.getText()+"");
-        			entry.submit();
-        			qi.setText("");
-        			return true;
-        		}
-        		return false;
-        	}
-        });
         
     }
 }

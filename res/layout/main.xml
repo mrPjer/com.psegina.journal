@@ -10,12 +10,10 @@
 		    android:text="@string/hello"
 		    android:layout_weight="1"
 		    />
-		<EditText
+		<Button
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:hint="What's on your mind?"
-				android:singleLine="false"
-				android:maxLength="200"
-				android:id="@+id/quickInput"
+				android:id="@+id/MainNewButton"
+				android:text="@string/MainNewButtonLabel"
 				/>
 </LinearLayout>

@@ -9,4 +9,6 @@
 		<string name="QuickInputTagHint">Tag the entry</string>
 		<string name="QuickInputContentHint">Write about anything you like</string>
 
+		<string name="MainNewButtonLabel">New Entry</string>
+
 </resources>
