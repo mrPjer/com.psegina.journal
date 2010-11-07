@@ -11,6 +11,7 @@
   	android:layout_height="wrap_content"
   	android:hint="@string/QuickInputTagHint"
   	android:id="@+id/QuickInputTagField"
+  	android:singleLine="true"
   	/>
  	<EditText
  		android:layout_width="fill_parent"
