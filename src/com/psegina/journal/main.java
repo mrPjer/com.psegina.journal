@@ -1,6 +1,7 @@
 package com.psegina.journal;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,7 +43,8 @@ public class main extends Activity {
 			public void onClick(View v) {
 				switch(v.getId()){
 				case R.id.MainNewButton:
-					
+					Intent i = new Intent(getApplicationContext(), QuickInput.class);
+					startActivity(i);
 					break;
 				}
 			}
