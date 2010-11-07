@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, main!</string>
+    <string name="app_name">Journal</string>
+
+		<string name="QuickInputTitle">New Journal entry</string>
+		<string name="QuickInputSubmit">Save</string>
+		<string name="QuickInputCancel">Cancel</string>
+		<string name="QuickInputTagHint">Tag the entry</string>
+		<string name="QuickInputContentHint">Write about anything you like</string>
+
+</resources>
