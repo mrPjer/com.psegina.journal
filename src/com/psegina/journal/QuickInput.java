@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /*
  * TODO
@@ -111,6 +112,7 @@ public class QuickInput extends Activity {
 	private void submit(){
 		JournalEntry entry = new JournalEntry(""+mBodyField.getText(), ""+mTagField.getText());
 		entry.submit();
+		Toast.makeText(getApplicationContext(), R.string.QuickInputSaved, Toast.LENGTH_SHORT).show();
 		finish();
 	}
 	
