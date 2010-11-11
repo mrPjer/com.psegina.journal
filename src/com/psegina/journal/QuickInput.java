@@ -110,10 +110,24 @@ public class QuickInput extends Activity {
 	 * This function submits the data into the database.
 	 */
 	private void submit(){
-		JournalEntry entry = new JournalEntry(""+mBodyField.getText(), ""+mTagField.getText());
-		entry.submit();
-		Toast.makeText(getApplicationContext(), R.string.QuickInputSaved, Toast.LENGTH_SHORT).show();
-		finish();
+		if(!validate()){
+		}
+		else{
+			JournalEntry entry = new JournalEntry(""+mBodyField.getText(), ""+mTagField.getText());
+			entry.submit();
+			Toast.makeText(getApplicationContext(), R.string.QuickInputSaved, Toast.LENGTH_SHORT).show();
+			finish();
+		}
+	}
+	
+	private boolean validate(){
+		if(mBodyField.getText().length()>0)
+			return true;
+		else{
+			Toast.makeText(getApplicationContext(), R.string.QuickInputSubmitNoBody, Toast.LENGTH_SHORT).show();
+			finish();
+			return false;
+		}
 	}
 	
 	public void share(String subject,String text) {
