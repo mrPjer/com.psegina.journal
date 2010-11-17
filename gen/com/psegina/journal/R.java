@@ -25,13 +25,14 @@ public final class R {
         public static final int singlejournalentry=0x7f030002;
     }
     public static final class string {
-        public static final int MainNewButtonLabel=0x7f040008;
-        public static final int MenuAbout=0x7f040009;
-        public static final int MenuSupport=0x7f04000a;
+        public static final int MainNewButtonLabel=0x7f040009;
+        public static final int MenuAbout=0x7f04000a;
+        public static final int MenuSupport=0x7f04000b;
         public static final int QuickInputCancel=0x7f040004;
         public static final int QuickInputContentHint=0x7f040006;
         public static final int QuickInputSaved=0x7f040007;
         public static final int QuickInputSubmit=0x7f040003;
+        public static final int QuickInputSubmitNoBody=0x7f040008;
         public static final int QuickInputTagHint=0x7f040005;
         public static final int QuickInputTitle=0x7f040002;
         public static final int app_name=0x7f040001;

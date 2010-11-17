@@ -113,7 +113,9 @@ public class QuickInput extends Activity {
 		if(!validate()){
 		}
 		else{
-			JournalEntry entry = new JournalEntry(""+mBodyField.getText(), ""+mTagField.getText());
+			JournalEntry entry = new JournalEntry(getApplicationContext());
+			entry.setBody(""+mBodyField.getText());
+			entry.setTags(""+mTagField.getText());
 			entry.submit();
 			Toast.makeText(getApplicationContext(), R.string.QuickInputSaved, Toast.LENGTH_SHORT).show();
 			finish();
