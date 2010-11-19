@@ -12,6 +12,14 @@
 		<string name="QuickInputSubmitNoBody">You haven\'t written anything that could be saved!</string>
 
 		<string name="MainNewButtonLabel">New Entry</string>
+		<string name="MainNoEntries">No entries</string>
+		
+		<string name="EntryLongClickTitle">Entry options</string>
+		<string name="EntryLongClickEdit">Edit</string>
+		<string name="EntryLongClickDelete">Delete</string>
+		<string name="EntryLongClickShare">Share</string>
+		
+		
 
 		<string name="MenuAbout">About</string>
 		<string name="MenuSupport">Support</string>

@@ -14,20 +14,30 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int MainNewButton=0x7f050000;
-        public static final int QuickInputBodyField=0x7f050003;
-        public static final int QuickInputRoot=0x7f050001;
-        public static final int QuickInputTagField=0x7f050002;
+        public static final int EntryItemTagField=0x7f050001;
+        public static final int EntryItemText=0x7f050002;
+        public static final int EntryItemTimestamp=0x7f050000;
+        public static final int MainNewButton=0x7f050004;
+        public static final int MainTextView=0x7f050003;
+        public static final int QuickInputBodyField=0x7f050007;
+        public static final int QuickInputRoot=0x7f050005;
+        public static final int QuickInputTagField=0x7f050006;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int quickinput=0x7f030001;
-        public static final int singlejournalentry=0x7f030002;
+        public static final int entries_list_single_item=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int quickinput=0x7f030002;
+        public static final int singlejournalentry=0x7f030003;
     }
     public static final class string {
+        public static final int EntryLongClickDelete=0x7f04000d;
+        public static final int EntryLongClickEdit=0x7f04000c;
+        public static final int EntryLongClickShare=0x7f04000e;
+        public static final int EntryLongClickTitle=0x7f04000b;
         public static final int MainNewButtonLabel=0x7f040009;
-        public static final int MenuAbout=0x7f04000a;
-        public static final int MenuSupport=0x7f04000b;
+        public static final int MainNoEntries=0x7f04000a;
+        public static final int MenuAbout=0x7f04000f;
+        public static final int MenuSupport=0x7f040010;
         public static final int QuickInputCancel=0x7f040004;
         public static final int QuickInputContentHint=0x7f040006;
         public static final int QuickInputSaved=0x7f040007;
