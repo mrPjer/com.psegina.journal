@@ -18,8 +18,10 @@
 		<string name="EntryLongClickEdit">Edit</string>
 		<string name="EntryLongClickDelete">Delete</string>
 		<string name="EntryLongClickShare">Share</string>
+		<string name="EntryLongClickCopyToClipboard">Copy to clipboard</string>
+		<string name="EntryLongClickShareTitle">Share your entry with</string>
 		
-		
+		<string name="CopiedToClipboard">Your text has been copied to the clipboard and can now be pasted anywhere.</string>
 
 		<string name="MenuAbout">About</string>
 		<string name="MenuSupport">Support</string>
