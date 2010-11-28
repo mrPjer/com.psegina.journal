@@ -31,7 +31,12 @@ public final class R {
         public static final int singlejournalentry=0x7f030003;
     }
     public static final class string {
-        public static final int CopiedToClipboard=0x7f040011;
+        public static final int Cancel=0x7f040015;
+        public static final int Confirm=0x7f040014;
+        public static final int CopiedToClipboard=0x7f040016;
+        public static final int EntryConfirmDelete=0x7f040012;
+        public static final int EntryConfirmDeleteTitle=0x7f040011;
+        public static final int EntryDeleted=0x7f040013;
         public static final int EntryLongClickCopyToClipboard=0x7f04000f;
         public static final int EntryLongClickDelete=0x7f04000d;
         public static final int EntryLongClickEdit=0x7f04000c;
@@ -40,8 +45,8 @@ public final class R {
         public static final int EntryLongClickTitle=0x7f04000b;
         public static final int MainNewButtonLabel=0x7f040009;
         public static final int MainNoEntries=0x7f04000a;
-        public static final int MenuAbout=0x7f040012;
-        public static final int MenuSupport=0x7f040013;
+        public static final int MenuAbout=0x7f040017;
+        public static final int MenuSupport=0x7f040018;
         public static final int QuickInputCancel=0x7f040004;
         public static final int QuickInputContentHint=0x7f040006;
         public static final int QuickInputSaved=0x7f040007;
