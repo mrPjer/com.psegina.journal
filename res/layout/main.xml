@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#2a2a2a"
     >
 		<ListView
 				android:orientation="vertical"
@@ -10,6 +11,17 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:id="@+id/MainTextView"
+				android:cacheColorHint="#00000000"
+				android:dividerHeight="0px"
+				/>
+		<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:id="@android:id/empty"
+				android:text="@string/MainNoEntries"
+				android:gravity="center_vertical|center_horizontal"
+				android:textStyle="bold"
 				/>
 		<Button
 				android:layout_width="fill_parent"

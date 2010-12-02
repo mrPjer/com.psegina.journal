@@ -7,12 +7,19 @@
 		<string name="QuickInputSubmit">Save</string>
 		<string name="QuickInputCancel">Cancel</string>
 		<string name="QuickInputTagHint">Tag the entry</string>
-		<string name="QuickInputContentHint">Write about anything you like</string>
+		<string name="QuickInputContentHint">Write about anything you like!</string>
 		<string name="QuickInputSaved">Your entry has been saved.</string>
 		<string name="QuickInputSubmitNoBody">You haven\'t written anything that could be saved!</string>
+		<string name="QuickInputUpdated">The entry has been updated.</string>
 
 		<string name="MainNewButtonLabel">New Entry</string>
-		<string name="MainNoEntries">No entries</string>
+		<string name="MainNoEntries">
+		Welcome to your Journal!\n\n
+		It is currently empty. Once you start to fill it out, this is were your entries will be shown.\n
+		You can enter new entries either by opening this screen and hitting the <i>New entry</i> button, or from anywhere on your phone by long-pressing the search button!\n\n
+		If you wish to know more, try checking out\n<i>Menu > About</i>!\n\n
+		That\'s it! We hope you enjoy filling out your new Journal!
+		</string>
 		
 		<string name="EntryLongClickTitle">Entry options</string>
 		<string name="EntryLongClickEdit">Edit</string>
