@@ -14,25 +14,43 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int EntryItemTagField=0x7f050001;
-        public static final int EntryItemText=0x7f050002;
-        public static final int EntryItemTimestamp=0x7f050000;
-        public static final int MainNewButton=0x7f050004;
-        public static final int MainTextView=0x7f050003;
-        public static final int QuickInputBodyField=0x7f050007;
-        public static final int QuickInputRoot=0x7f050005;
-        public static final int QuickInputTagField=0x7f050006;
+        public static final int EntryItemTagField=0x7f060001;
+        public static final int EntryItemText=0x7f060002;
+        public static final int EntryItemTimestamp=0x7f060000;
+        public static final int MainMenuAbout=0x7f060011;
+        public static final int MainMenuPreferences=0x7f060010;
+        public static final int MainMenuSupport=0x7f06000f;
+        public static final int MainNewButton=0x7f060004;
+        public static final int MainTextView=0x7f060003;
+        public static final int QuickInputBodyField=0x7f060007;
+        public static final int QuickInputRoot=0x7f060005;
+        public static final int QuickInputTagField=0x7f060006;
+        public static final int SupportBody=0x7f06000e;
+        public static final int SupportHeader=0x7f06000d;
+        public static final int SupportRoot=0x7f06000c;
+        public static final int singleItemDate=0x7f060009;
+        public static final int singleItemDateLabel=0x7f060008;
+        public static final int singleItemTag=0x7f06000b;
+        public static final int singleItemTagLabel=0x7f06000a;
     }
     public static final class layout {
-        public static final int entries_list_single_item=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int quickinput=0x7f030002;
-        public static final int singlejournalentry=0x7f030003;
+        public static final int autocomplete_list_item=0x7f030000;
+        public static final int entries_list_single_item=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int quickinput=0x7f030003;
+        public static final int single_item_view=0x7f030004;
+        public static final int singlejournalentry=0x7f030005;
+        public static final int support=0x7f030006;
+        public static final int support_single_item=0x7f030007;
+    }
+    public static final class menu {
+        public static final int main=0x7f050000;
     }
     public static final class string {
-        public static final int Cancel=0x7f040016;
-        public static final int Confirm=0x7f040015;
-        public static final int CopiedToClipboard=0x7f040017;
+        public static final int Cancel=0x7f040018;
+        public static final int Confirm=0x7f040017;
+        public static final int CopiedToClipboard=0x7f040019;
+        public static final int EntryClickForMore=0x7f040015;
         public static final int EntryConfirmDelete=0x7f040013;
         public static final int EntryConfirmDeleteTitle=0x7f040012;
         public static final int EntryDeleted=0x7f040014;
@@ -44,8 +62,9 @@ public final class R {
         public static final int EntryLongClickTitle=0x7f04000c;
         public static final int MainNewButtonLabel=0x7f04000a;
         public static final int MainNoEntries=0x7f04000b;
-        public static final int MenuAbout=0x7f040018;
-        public static final int MenuSupport=0x7f040019;
+        public static final int MenuAbout=0x7f04001a;
+        public static final int MenuPreferences=0x7f04001b;
+        public static final int MenuSupport=0x7f04001c;
         public static final int QuickInputCancel=0x7f040004;
         public static final int QuickInputContentHint=0x7f040006;
         public static final int QuickInputSaved=0x7f040007;
@@ -54,6 +73,18 @@ public final class R {
         public static final int QuickInputTagHint=0x7f040005;
         public static final int QuickInputTitle=0x7f040002;
         public static final int QuickInputUpdated=0x7f040009;
+        public static final int SingleItemViewNoData=0x7f040016;
+        public static final int SupportBugReporting=0x7f040020;
+        public static final int SupportBugReportingText=0x7f040021;
+        public static final int SupportContributeToTheSource=0x7f040024;
+        public static final int SupportContributeToTheSourceText=0x7f040025;
+        public static final int SupportDonate=0x7f040026;
+        public static final int SupportDonateText=0x7f040027;
+        public static final int SupportIntro=0x7f04001e;
+        public static final int SupportIntroText=0x7f04001f;
+        public static final int SupportTitle=0x7f04001d;
+        public static final int SupportTranslate=0x7f040022;
+        public static final int SupportTranslateText=0x7f040023;
         public static final int app_name=0x7f040001;
         public static final int hello=0x7f040000;
     }

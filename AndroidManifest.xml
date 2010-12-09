@@ -13,6 +13,9 @@
             </intent-filter>
         </activity>
 
+			<activity android:name=".gui.SingleItemView" />
+			<activity android:name=".gui.Support" />
+
 		    <activity android:name=".gui.QuickInput" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/QuickInputTitle">
 		    	    <intent-filter> 
 		        		<action android:name="android.intent.action.SEARCH_LONG_PRESS" /> 

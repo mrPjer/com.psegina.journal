@@ -30,6 +30,11 @@
 		<string name="EntryConfirmDeleteTitle">Confirm delete</string>
 		<string name="EntryConfirmDelete">Are you sure you want to delete this entry? Deleted entries cannot be recovered!</string>
 		<string name="EntryDeleted">Entry deleted</string>
+		<string name="EntryClickForMore"><b>...</b></string>
+		
+		<string name="SingleItemViewNoData">Hmm, it seems that there was no data passed to this activity.\n
+		This should <b>never</b> happen with normal usage.\n
+		Please report the issue via email on <a href="mailto:psegina@ymail.com" >psegina@ymail.com</a></string>
 		
 		<string name="Confirm">Confirm</string>
 		<string name="Cancel">Cancel</string>
@@ -37,5 +42,24 @@
 		<string name="CopiedToClipboard">Your text has been copied to the clipboard and can now be pasted anywhere.</string>
 
 		<string name="MenuAbout">About</string>
+		<string name="MenuPreferences">Preferences</string>
 		<string name="MenuSupport">Support</string>
+		
+		<string name="SupportTitle">Support</string>
+		<string name="SupportIntro">Introduction</string>
+		<string name="SupportIntroText">Journal (com.psegina.journal) is a free open source application created mainly in it\'s creator\'s free time. Seeing as I would like to learn more about Android and programming in
+		general, I would like you to help me make this application as good as possible. So, on this page I have listed several ways in which you as a user can contribute.
+		</string>
+		<string name="SupportBugReporting">Suggestions and bug reporting</string>
+		<string name="SupportBugReportingText">Believe it or not, we value the voice of our every user. If you have an idea that you think should be implemented
+		or you have some suggestions about improving this application, feel free to let us know, either by leaving a comment on the Android Market, or sending us
+		an email!\nLikewise, if you find a bug, or something that isn\'t working the way it should be, let us know so that we can fix it as soon as possible!</string>
+		<string name="SupportTranslate">Translate</string>
+		<string name="SupportTranslateText">Android is an open platform used by people all over the world. Most of these people are not native English speakers
+			(and neither am I). So if you have some wicked language skills and would like to translate this app, feel free to contact us!</string>
+		<string name="SupportContributeToTheSource">Contributing to the source</string>
+		<string name="SupportContributeToTheSourceText">Likewise, if you are a programmer and think some things could be done better, feel free to take a
+		look at the source code available on gitHub. And if you get any ideas, be sure to send us the improvements!</string>
+		<string name="SupportDonate">Donate</string>
+		<string name="SupportDonateText">Finally, if you would like to help this project grow by donating, you can do so via AlertPay. Every little bit helps!</string>
 </resources>

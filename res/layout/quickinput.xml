@@ -6,13 +6,14 @@
   android:orientation="vertical"
   android:padding="10px"
   android:id="@+id/QuickInputRoot">
-  <EditText
+  <AutoCompleteTextView
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
   	android:hint="@string/QuickInputTagHint"
   	android:id="@+id/QuickInputTagField"
   	android:singleLine="true"
   	android:selectAllOnFocus="true"
+  	android:completionThreshold="1"
   	/>
  	<EditText
  		android:layout_width="fill_parent"
