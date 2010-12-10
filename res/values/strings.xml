@@ -32,6 +32,32 @@
 		<string name="EntryDeleted">Entry deleted</string>
 		<string name="EntryClickForMore"><b>...</b></string>
 		
+		<string name="PreferencesTitle">Preferences</string>
+		<string name="PreferencesHeaderGeneral">General settings</string>
+		<string name="PreferencesHeaderInput">Input settings</string>
+		<string name="PreferencesHeaderSecurity">Security and privacy settings</string>
+		<string name="PreferencesItemGeneralShorten">Shorten entries</string>
+		<string name="PreferencesItemGeneralShortenSubOff">Entries will be shown in full length</string>
+		<string name="PreferencesItemGeneralShortenSubOn">Entries will be shown shortened</string>
+		<string name="PreferencesItemGeneralShortenAmount">Length of shortened entry</string>
+		<string name="PreferencesItemGeneralShortenAmountSub">Maximum number of characters to show</string>
+		<string name="PreferencesItemGeneralEntriesPerPage">Entries per page</string>
+		<string name="PreferencesItemGeneralEntriesPerPageSub">Number of entries to show per page</string>
+		
+		<string name="PreferencesItemInputAutocomplete">Suggest tags</string>
+		<string name="PreferencesItemInputAutocompleteSubOff">Tags will not be suggested during input</string>
+		<string name="PreferencesItemInputAutocompleteSubOn">Tags will be suggested during input</string>
+		<string name="PreferencesItemInputRememberLast">Remember last tag</string>
+		<string name="PreferencesItemInputRememberLastSubOff">Last entered tag will not be remembered</string>
+		<string name="PreferencesItemInputRememberLastSubOn">Last entered tag will be automatically inserted</string>
+		<string name="PreferencesItemSecurityPasswordEnabled">Ask for password</string>
+		<string name="PreferencesItemSecurityPasswordEnabledSubOff">No password is required</string>
+		<string name="PreferencesItemSecurityPasswordEnabledSubOn">A password is required. Note that if you forget your password, you will not be able to access your entries!</string>
+		<string name="PreferencesItemSecurityPassword">Set password</string>
+		<string name="PreferencesItemSecurityPasswordSub">Choose a strong password</string>
+		
+		
+		
 		<string name="SingleItemViewNoData">Hmm, it seems that there was no data passed to this activity.\n
 		This should <b>never</b> happen with normal usage.\n
 		Please report the issue via email on <a href="mailto:psegina@ymail.com" >psegina@ymail.com</a></string>
