@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, main!</string>
     <string name="app_name">Journal</string>
 
 		<string name="QuickInputTitle">New Journal entry</string>
@@ -56,7 +55,39 @@
 		<string name="PreferencesItemSecurityPassword">Set password</string>
 		<string name="PreferencesItemSecurityPasswordSub">Choose a strong password</string>
 		
+		<string name="AboutTitle">About</string>
+		<string name="AboutAppTitle">Application info</string>
+		<string name="AboutAppName">Name</string>
+		<string name="AboutAppWebsite">Forum link</string>
+		<string name="AboutPackageName">Package name</string>
+		<string name="AboutAppVersion">Version</string>
+		<string name="AboutAppAuthor">Author</string>
+		<string name="AboutAppAuthorEmail">Contact author via email</string>
+		<string name="AboutAppMarket">View app on market</string>
+		<string name="AboutAppAuthorMarket">View author on market</string>
+		<string name="AboutAppSourceCode">Source code</string>
+		<string name="AboutAAV">Android@Vidi</string>
+		<string name="AboutAAVText">
+		This application was submitted to the Android@Vidi Android programming contest held
+		by the Croatian tech magazine VIDI. More info is available at http://android.vidilab.com
+		</string>
+		<string name="AboutJournaling">A short guide</string>
+		<string name="AboutJournalingText">
+		<i>(There are many reasons as to why one should keep a journal. In case you want to read up
+		on this, there is a great article on journalling here : http://ririanproject.com/2006/09/22/10-reasons-to-keep-a-journal)</i>\nThis 
+		app is meant to provide you with a small and flexible notepad into which you can input your thoughts, observations
+		and important events. Giving you the ability to write entries from anywhere in your phone by long-pressing the search button, 
+		you can now record thoughts on the fly. And to make sure that things do not get messy, you can tag entries so that entries that 
+		have common content (for example those that could be grouped under <i>jokes</i>) can be read in a single thread simply by clicking
+		on one of the entries.\nWith 
+		this app you can keep track of important things in your life, get better insight into your own thoughts and quickly type down things 
+		that you would usually forget.
+		</string>
 		
+		<string name="SingleItemEntry">Entry</string>
+		<string name="SingleItemTimestamp">Submitted on</string>
+		<string name="SingleItemTag">Tag</string>
+		<string name="SingleItemSameTag">Entries with the same tag</string>
 		
 		<string name="SingleItemViewNoData">Hmm, it seems that there was no data passed to this activity.\n
 		This should <b>never</b> happen with normal usage.\n
@@ -70,6 +101,7 @@
 		<string name="MenuAbout">About</string>
 		<string name="MenuPreferences">Preferences</string>
 		<string name="MenuSupport">Support</string>
+		<string name="MenuSearch">Search</string>
 		
 		<string name="SupportTitle">Support</string>
 		<string name="SupportIntro">Introduction</string>

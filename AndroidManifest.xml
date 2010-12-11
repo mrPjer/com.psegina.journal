@@ -21,6 +21,7 @@
 		    <activity android:name=".gui.QuickInput" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/QuickInputTitle">
 		    	    <intent-filter> 
 		        		<action android:name="android.intent.action.SEARCH_LONG_PRESS" /> 
+		        		<action android:name="android.intent.action.CAMERA_BUTTON" />
 		        		<category android:name="android.intent.category.DEFAULT" /> 
 		    			</intent-filter>
 		    </activity>
