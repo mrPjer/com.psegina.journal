@@ -5,6 +5,7 @@
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".App">
         
+        <!-- Defines the main screen -->
         <activity android:name=".gui.main"
                   android:label="@string/app_name">
             <intent-filter>
@@ -13,19 +14,42 @@
             </intent-filter>
         </activity>
 
+			
 			<activity android:name=".gui.SingleItemView" />
+			
 			<activity android:name=".gui.Support" />
+			
 			<activity android:name=".gui.Preferences" />
+			
 			<activity android:name=".gui.About" />
-
+			
+			<!-- Search activity -->
+			<activity android:name=".gui.Search">
+				<intent-filter>
+					<!-- Activity is searchable -->
+        	<action android:name="android.intent.action.SEARCH" />
+        </intent-filter>
+        <!-- Search configuration to use -->
+        <meta-data android:name="android.app.searchable"
+                   android:resource="@xml/searchable"/>
+			</activity>
+			
+			<!-- QuickInput activity -->
 		    <activity android:name=".gui.QuickInput" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/QuickInputTitle">
 		    	    <intent-filter> 
+		    	    	<!-- Allow running on search long press -->
 		        		<action android:name="android.intent.action.SEARCH_LONG_PRESS" /> 
+		        		<!-- Allow running on camera button press -->
 		        		<action android:name="android.intent.action.CAMERA_BUTTON" />
+		        		<!-- Offer to be the default action for the above filters -->
 		        		<category android:name="android.intent.category.DEFAULT" /> 
 		    			</intent-filter>
 		    </activity>
 		    
+		    <!-- Define the whole application as searchable -->
+		    <meta-data android:name="android.app.default_searchable"
+               android:value=".gui.Search" />
+               
 		</application>
     <uses-sdk android:minSdkVersion="4" />
 

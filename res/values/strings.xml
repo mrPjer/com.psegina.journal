@@ -55,6 +55,12 @@
 		<string name="PreferencesItemSecurityPassword">Set password</string>
 		<string name="PreferencesItemSecurityPasswordSub">Choose a strong password</string>
 		
+		<string name="SearchHint">Search Journal</string>
+		<string name="SearchDescription">Search your Journal for tags and entries matching the query.</string>
+		<string name="SearchNoMatches">No results</string>
+		<string name="SearchContainingTag">Tags containing the query</string>
+		<string name="SearchContainingText">Entries containing the query</string>
+		
 		<string name="AboutTitle">About</string>
 		<string name="AboutAppTitle">Application info</string>
 		<string name="AboutAppName">Name</string>

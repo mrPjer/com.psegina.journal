@@ -45,34 +45,35 @@ public final class R {
         public static final int preferences=0x7f030004;
         public static final int preferences_header=0x7f030005;
         public static final int quickinput=0x7f030006;
-        public static final int single_item_view=0x7f030007;
-        public static final int single_item_view_head=0x7f030008;
-        public static final int singlejournalentry=0x7f030009;
-        public static final int support=0x7f03000a;
-        public static final int support_single_item=0x7f03000b;
+        public static final int search_results=0x7f030007;
+        public static final int single_item_view=0x7f030008;
+        public static final int single_item_view_head=0x7f030009;
+        public static final int singlejournalentry=0x7f03000a;
+        public static final int support=0x7f03000b;
+        public static final int support_single_item=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f070000;
     }
     public static final class string {
-        public static final int AboutAAV=0x7f050046;
-        public static final int AboutAAVText=0x7f050047;
-        public static final int AboutAppAuthor=0x7f050041;
-        public static final int AboutAppAuthorEmail=0x7f050042;
-        public static final int AboutAppAuthorMarket=0x7f050044;
-        public static final int AboutAppMarket=0x7f050043;
-        public static final int AboutAppName=0x7f05003d;
-        public static final int AboutAppSourceCode=0x7f050045;
-        public static final int AboutAppTitle=0x7f05003c;
-        public static final int AboutAppVersion=0x7f050040;
-        public static final int AboutAppWebsite=0x7f05003e;
-        public static final int AboutJournaling=0x7f050048;
-        public static final int AboutJournalingText=0x7f050049;
-        public static final int AboutPackageName=0x7f05003f;
-        public static final int AboutTitle=0x7f05003b;
-        public static final int Cancel=0x7f050050;
-        public static final int Confirm=0x7f05004f;
-        public static final int CopiedToClipboard=0x7f050051;
+        public static final int AboutAAV=0x7f05004b;
+        public static final int AboutAAVText=0x7f05004c;
+        public static final int AboutAppAuthor=0x7f050046;
+        public static final int AboutAppAuthorEmail=0x7f050047;
+        public static final int AboutAppAuthorMarket=0x7f050049;
+        public static final int AboutAppMarket=0x7f050048;
+        public static final int AboutAppName=0x7f050042;
+        public static final int AboutAppSourceCode=0x7f05004a;
+        public static final int AboutAppTitle=0x7f050041;
+        public static final int AboutAppVersion=0x7f050045;
+        public static final int AboutAppWebsite=0x7f050043;
+        public static final int AboutJournaling=0x7f05004d;
+        public static final int AboutJournalingText=0x7f05004e;
+        public static final int AboutPackageName=0x7f050044;
+        public static final int AboutTitle=0x7f050040;
+        public static final int Cancel=0x7f050055;
+        public static final int Confirm=0x7f050054;
+        public static final int CopiedToClipboard=0x7f050056;
         public static final int EntryClickForMore=0x7f050024;
         public static final int EntryConfirmDelete=0x7f050022;
         public static final int EntryConfirmDeleteTitle=0x7f050021;
@@ -92,10 +93,10 @@ public final class R {
         public static final int KEY_PreferencesItemSecurityPassword=0x7f05000f;
         public static final int MainNewButtonLabel=0x7f050019;
         public static final int MainNoEntries=0x7f05001a;
-        public static final int MenuAbout=0x7f050052;
-        public static final int MenuPreferences=0x7f050053;
-        public static final int MenuSearch=0x7f050055;
-        public static final int MenuSupport=0x7f050054;
+        public static final int MenuAbout=0x7f050057;
+        public static final int MenuPreferences=0x7f050058;
+        public static final int MenuSearch=0x7f05005a;
+        public static final int MenuSupport=0x7f050059;
         public static final int PreferencesHeaderGeneral=0x7f050026;
         public static final int PreferencesHeaderInput=0x7f050027;
         public static final int PreferencesHeaderSecurity=0x7f050028;
@@ -126,22 +127,27 @@ public final class R {
         public static final int QuickInputTagHint=0x7f050014;
         public static final int QuickInputTitle=0x7f050011;
         public static final int QuickInputUpdated=0x7f050018;
-        public static final int SingleItemEntry=0x7f05004a;
-        public static final int SingleItemSameTag=0x7f05004d;
-        public static final int SingleItemTag=0x7f05004c;
-        public static final int SingleItemTimestamp=0x7f05004b;
-        public static final int SingleItemViewNoData=0x7f05004e;
-        public static final int SupportBugReporting=0x7f050059;
-        public static final int SupportBugReportingText=0x7f05005a;
-        public static final int SupportContributeToTheSource=0x7f05005d;
-        public static final int SupportContributeToTheSourceText=0x7f05005e;
-        public static final int SupportDonate=0x7f05005f;
-        public static final int SupportDonateText=0x7f050060;
-        public static final int SupportIntro=0x7f050057;
-        public static final int SupportIntroText=0x7f050058;
-        public static final int SupportTitle=0x7f050056;
-        public static final int SupportTranslate=0x7f05005b;
-        public static final int SupportTranslateText=0x7f05005c;
+        public static final int SearchContainingTag=0x7f05003e;
+        public static final int SearchContainingText=0x7f05003f;
+        public static final int SearchDescription=0x7f05003c;
+        public static final int SearchHint=0x7f05003b;
+        public static final int SearchNoMatches=0x7f05003d;
+        public static final int SingleItemEntry=0x7f05004f;
+        public static final int SingleItemSameTag=0x7f050052;
+        public static final int SingleItemTag=0x7f050051;
+        public static final int SingleItemTimestamp=0x7f050050;
+        public static final int SingleItemViewNoData=0x7f050053;
+        public static final int SupportBugReporting=0x7f05005e;
+        public static final int SupportBugReportingText=0x7f05005f;
+        public static final int SupportContributeToTheSource=0x7f050062;
+        public static final int SupportContributeToTheSourceText=0x7f050063;
+        public static final int SupportDonate=0x7f050064;
+        public static final int SupportDonateText=0x7f050065;
+        public static final int SupportIntro=0x7f05005c;
+        public static final int SupportIntroText=0x7f05005d;
+        public static final int SupportTitle=0x7f05005b;
+        public static final int SupportTranslate=0x7f050060;
+        public static final int SupportTranslateText=0x7f050061;
         public static final int app_author=0x7f050001;
         public static final int app_author_email=0x7f050002;
         public static final int app_author_website=0x7f050003;
@@ -167,5 +173,6 @@ public final class R {
     }
     public static final class xml {
         public static final int preferences=0x7f040000;
+        public static final int searchable=0x7f040001;
     }
 }
