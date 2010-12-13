@@ -127,6 +127,9 @@ public class JournalPaginator {
 		}
 	}
 	
+	/**
+	 * Reload user preferences
+	 */
 	public void reloadPreferences(){
 		mStep = App.Prefs.entriesPerPage();
 	}
