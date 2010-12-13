@@ -127,6 +127,10 @@ public class JournalPaginator {
 		}
 	}
 	
+	public void reloadPreferences(){
+		mStep = App.Prefs.entriesPerPage();
+	}
+	
 	/**
 	 * Validates the curreent source
 	 * @throws JournalPaginatorException if source is not valid
