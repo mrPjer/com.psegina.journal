@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Defines the view that is used to display
+	a single entry on the main screen.
+ -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:paddingBottom="4dp">
+  	<TextView
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:id="@+id/EntryItemTimestamp"
+  		android:gravity="right"
+  		style="?android:attr/listSeparatorTextViewStyle"
+  		android:textColor="#c1ddff"
+  		
+  		/>	
+
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/EntryItemTagField"
+			android:textStyle="bold"
+			android:gravity="right"
+			android:paddingTop="2dp"
+			android:paddingBottom="2dp"
+			android:paddingRight="4dp"
+			android:textSize="9dp"
+			android:textColor="#acffd5"
+			/>
+  	<TextView
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:autoLink="web|email"
+  		android:textColor="#fff"
+  		android:id="@+id/EntryItemText"
+  		/>
+  	<!--
+  	<TextView
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:visibility="visible"
+  		android:id="@+id/EntryItemId"
+  		/>
+  		-->
+
+</LinearLayout>

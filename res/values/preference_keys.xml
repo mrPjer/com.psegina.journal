@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="KEY:PreferencesItemGeneralShorten">PREF_SHORTEN</string>
+	<string name="KEY:PreferenceItemSecurityPasswordEnabled">PREF_PASSENABLED</string>
+	<string name="KEY:PreferencesItemGeneralEntriesPerPage">PREF_ENTRIESPPAGE</string>
+	<string name="KEY:PreferencesItemGeneralShortenAmount">PREF_SHORTENAMOUNT</string>
+	<string name="KEY:PreferencesItemInputAutocomplete">PREF_AUTOCOMPLETE</string>
+	<string name="KEY:PreferenceItemInputRememberLast">PREF_REMEMBERLAST</string>
+	<string name="KEY:PreferencesItemSecurityPassword">PREF_PASSWORD</string>
+	<string name="KEY:PreferencesItemLastSavedTag">PREF_LASTTAG</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	This layout file defines the layout for the About menu's
+	section about the application. There is a lot of repetition
+	here, so perhaps this could be done in a cleaner way with
+	templates.
+ -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  style="@style/journalColor"
+  android:id="@+id/AboutRoot"
+  android:paddingBottom="8dp" >
+  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppName"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_name"
+  		/>
+  	</LinearLayout>
+  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutPackageName"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_package_name"
+  		/>
+  	</LinearLayout>
+<LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppVersion"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_version"
+  		/>
+  	</LinearLayout>
+  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppAuthor"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_author"
+  		/>
+  	</LinearLayout>
+  	
+  	  	  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppAuthorEmail"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_author_email"
+  		/>
+  	</LinearLayout>
+
+  	  	  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppWebsite"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_website"
+  		/>
+  	</LinearLayout>
+  	
+  	  <LinearLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal"
+  	>
+  	<TextView
+			style="@style/about_label"
+  		android:text="@string/AboutAppSourceCode"
+  		/>
+  	<TextView
+  		style="@style/about_value"
+  		android:text="@string/app_source_link"
+  		/>
+  	</LinearLayout>
+ 
+  
+  </LinearLayout>

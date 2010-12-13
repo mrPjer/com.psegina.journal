@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		<string name="app_version">0.8ß_private.psegina</string>
+		<string name="app_author">Petar Šegina</string>
+		<string name="app_author_email">psegina@ymail.com</string>
+		<string name="app_author_website">http://psegina.vacau.com</string>
+		<string name="app_source_link">http://www.github.com/mrPjer/com.psegina.journal</string>
+		<string name="app_market_link">market://search?q=pname:com.psegina.journal</string>
+		<string name="app_market_author">market://search?q=pub:"Petar Šegina"</string>
+		<string name="app_package_name">com.psegina.journal</string>
+		<string name="app_website">http://www.xda-developers.com/forum/showthread.php?t=000000</string>
+</resources>

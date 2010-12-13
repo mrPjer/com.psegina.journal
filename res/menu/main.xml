@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Defines the menu that is inflated when the user presses
+	the MENU button on the main screen.
+ -->
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:title="@string/MenuSearch" android:id="@+id/MainMenuSearch" android:icon="@android:drawable/ic_menu_search" />
+<item android:title="@string/MenuSupport" android:id="@+id/MainMenuSupport" android:icon="@android:drawable/btn_star_big_off" />
+<item android:title="@string/MenuPreferences" android:id="@+id/MainMenuPreferences" android:icon="@android:drawable/ic_menu_preferences" />
+<item android:title="@string/MenuAbout" android:id="@+id/MainMenuAbout" android:icon="@android:drawable/ic_menu_info_details" />
+</menu>

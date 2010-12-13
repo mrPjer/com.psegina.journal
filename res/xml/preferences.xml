@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" >
+  <PreferenceCategory
+  	android:title="@string/PreferencesHeaderGeneral" >
+  	<EditTextPreference
+  		android:title="@string/PreferencesItemGeneralEntriesPerPage"
+  		android:summary="@string/PreferencesItemGeneralEntriesPerPageSub"
+  		android:key="@string/KEY:PreferencesItemGeneralEntriesPerPage"
+  		android:defaultValue="20"
+  		android:inputType="number"  />
+  	<CheckBoxPreference
+  		android:title="@string/PreferencesItemGeneralShorten"
+  		android:summaryOff="@string/PreferencesItemGeneralShortenSubOff"
+  		android:summaryOn="@string/PreferencesItemGeneralShortenSubOn"
+  		android:disableDependentsState="false"
+  		android:key="@string/KEY:PreferencesItemGeneralShorten"
+  		android:defaultValue="false" />
+  	<EditTextPreference
+  		android:title="@string/PreferencesItemGeneralShortenAmount"
+  		android:summary="@string/PreferencesItemGeneralShortenAmountSub"
+  		android:defaultValue="200"
+  		android:inputType="number"
+  		android:key="@string/KEY:PreferencesItemGeneralShortenAmount"
+  		android:dependency="@string/KEY:PreferencesItemGeneralShorten"  />
+  	
+  </PreferenceCategory>
+  <PreferenceCategory
+  	android:title="@string/PreferencesHeaderInput" >
+  	<CheckBoxPreference
+  		android:title="@string/PreferencesItemInputAutocomplete"
+  		android:summaryOff="@string/PreferencesItemInputAutocompleteSubOff"
+  		android:summaryOn="@string/PreferencesItemInputAutocompleteSubOn"
+  		android:key="@string/KEY:PreferencesItemInputAutocomplete"
+  		android:defaultValue="true"
+  		/>
+  		
+  	<CheckBoxPreference
+  		android:title="@string/PreferencesItemInputRememberLast"
+  		android:summaryOff="@string/PreferencesItemInputRememberLastSubOff"
+  		android:summaryOn="@string/PreferencesItemInputRememberLastSubOn"
+  		android:key="@string/KEY:PreferenceItemInputRememberLast"
+  		android:defaultValue="true"
+  		/> 
+  </PreferenceCategory>
+  <PreferenceCategory
+  	android:title="@string/PreferencesHeaderSecurity" >
+  	<CheckBoxPreference
+  		android:title="@string/PreferencesItemSecurityPasswordEnabled"
+  		android:summaryOff="@string/PreferencesItemSecurityPasswordEnabledSubOff"
+  		android:summaryOn="@string/PreferencesItemSecurityPasswordEnabledSubOn"
+  		android:key="@string/KEY:PreferenceItemSecurityPasswordEnabled"
+  		android:disableDependentsState="false"
+  		android:defaultValue="false"
+  		/> 
+  	 <EditTextPreference
+  		android:title="@string/PreferencesItemSecurityPassword"
+  		android:summary="@string/PreferencesItemSecurityPasswordSub"
+  		android:defaultValue=""
+  		android:password="true"
+  		android:key="@string/KEY:PreferencesItemSecurityPassword"
+  		android:dependency="@string/KEY:PreferenceItemSecurityPasswordEnabled"  />
+  </PreferenceCategory>
+</PreferenceScreen>

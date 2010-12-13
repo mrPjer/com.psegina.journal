@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Layout file that defines the look of the dropdown
+	box that shows autocomplete 
+	suggestions on the tag field.
+ -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="6dp"
+    android:textSize="18sp"
+    android:textColor="#000">
+</TextView>

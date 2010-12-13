@@ -135,7 +135,7 @@ public class JournalPaginator {
 	}
 	
 	/**
-	 * Validates the curreent source
+	 * Validates the current source
 	 * @throws JournalPaginatorException if source is not valid
 	 */
 	private void validate() throws JournalPaginatorException{
