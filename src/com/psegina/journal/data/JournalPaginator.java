@@ -32,9 +32,12 @@ public class JournalPaginator {
 	public JournalEntry[] getEntries(){
 		JournalEntry[] result = new JournalEntry[mStep];
 		long end = mPosition + mStep;
+		if(end > mSource.length)
+			end = mSource.length;
 		int j = 0;
 		for(int i = mPosition; i < end; i++){
 			result[j] = mSource[i];
+			j++;
 		}
 			
 		return result;
