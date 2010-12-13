@@ -25,6 +25,10 @@ public class JournalPaginator {
 		mSource = source;
 	}
 	
+	/**
+	 * 
+	 * @return JournalEntries on the current page
+	 */
 	public JournalEntry[] getEntries(){
 		JournalEntry[] result = new JournalEntry[mStep];
 		long end = mPosition + mStep;
