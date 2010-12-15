@@ -75,18 +75,18 @@ public class EntriesCursorAdapter extends CursorAdapter {
 	
 	private boolean isNewGroup(Cursor cursor, int position){
 		Calendar calendar = Calendar.getInstance();
-		Log.e("POS", ""+position);
+		//Log.e("POS", ""+position);
 		int current = 0;
 		int previous = 0;
 		calendar.setTime(new Date(cursor.getLong(cursor.getColumnIndex(Database.KEY_TIMESTAMP)) * 1000));
 		current =  new Integer(calendar.get(Calendar.DAY_OF_MONTH)) ;
-		Log.e("CUR", ""+current);
+		//Log.e("CUR", ""+current);
 		if(cursor.getPosition() > 0){
 		cursor.moveToPosition(position - 1);
 		calendar.setTime(new Date(cursor.getLong(cursor.getColumnIndex(Database.KEY_TIMESTAMP)) * 1000));
 		previous = calendar.get(Calendar.DAY_OF_MONTH);
-		Log.e("PRE", ""+previous);
-		Log.e("CUR2", ""+ current);
+		//Log.e("PRE", ""+previous);
+		//Log.e("CUR2", ""+ current);
 		cursor.moveToPosition(position);
 		if( previous != current )
 			return true;
