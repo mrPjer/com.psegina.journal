@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dnevnik</string>
+
+		<string name="QuickInputTitle">Novi dnevnički unos</string>
+		<string name="QuickInputSubmit">Spremi</string>
+		<string name="QuickInputCancel">Odustani</string>
+		<string name="QuickInputTagHint">Označi unos</string>
+		<string name="QuickInputContentHint">Piši o čemu god želiš!!</string>
+		<string name="QuickInputSaved">Tvoj unos je spremljen</string>
+		<string name="QuickInputSubmitNoBody">Nisi unio/la ništa što bi moglo biti spremljeno!!</string>
+		<string name="QuickInputUpdated">Unos je ažuriran</string>
+
+		<string name="MainTitle">Tvoji posljednji unosi</string>
+		<string name="MainNewButtonLabel">Novi unos</string>
+		<string name="MainNoEntries">
+		Dobrodošao/la u svoj Dnevnik!\n\n
+		Trenutno je prazan. Jednom kada ga počneš ispunjavati, ovo je mjesto gdje će tvoji unosi biti prikazani..\n
+		Nove unose možeš spremiti ili otvaranjem ovog ekrana i pritiskom na gumb <i>Novi unos</i> ili od bilo kuda sa svoga telefona ako dugo držiš tipku za traženje!\n\n
+		Ako želiš znati više, provjeri\n<i>Meni > O programu</i>!\n\n
+		To je to! Nadam se da ćeš uživati u ispunjavanju svoga Dnevnika!
+		</string>
+		
+		<string name="EntryLongClickTitle">Opcije unosa</string>
+		<string name="EntryLongClickEdit">Izmijeni</string>
+		<string name="EntryLongClickDelete">Obriši</string>
+		<string name="EntryLongClickShare">Podijeli</string>
+		<string name="EntryLongClickCopyToClipboard">Kopiraj u međuspremnik</string>
+		<string name="EntryLongClickShareTitle">Podijeli svoj unos sa</string>
+		<string name="EntryConfirmDeleteTitle">Potvrda brisanja</string>
+		<string name="EntryConfirmDelete">Jesi siguran da želiš obrisati ovaj unos? Obrisani unosi se ne mogu povratiti!</string>
+		<string name="EntryDeleted">Unos obrisan</string>
+		<string name="EntryClickForMore"><b>...</b></string>
+		
+		<string name="PreferencesTitle">Postavke</string>
+		<string name="PreferencesHeaderGeneral">Opće postavke</string>
+		<string name="PreferencesHeaderInput">Opcije unosa</string>
+		<string name="PreferencesHeaderSecurity">Sigurnost i privatnost</string>
+		<string name="PreferencesItemGeneralShorten">Skrati unose</string>
+		<string name="PreferencesItemGeneralShortenSubOff">Unosi će biti prikazani u punoj duljini.</string>
+		<string name="PreferencesItemGeneralShortenSubOn">Unosi će biti prikazani skraćeni.</string>
+		<string name="PreferencesItemGeneralShortenAmount">Duljina skraćenog unosa</string>
+		<string name="PreferencesItemGeneralShortenAmountSub">Maksimalan broj znakova koji će biti prikazan</string>
+		<string name="PreferencesItemGeneralEntriesPerPage">Unosa po strani</string>
+		<string name="PreferencesItemGeneralEntriesPerPageSub">Broj unosa koji će biti prikazan po strani</string>
+		
+		<string name="PreferencesItemInputAutocomplete">Predloži oznake</string>
+		<string name="PreferencesItemInputAutocompleteSubOff">Oznake neće biti predlagane tijekom unosa</string>
+		<string name="PreferencesItemInputAutocompleteSubOn">Oznake će biti predlagane tijekom unosa</string>
+		<string name="PreferencesItemInputRememberLast">Zapamti posljednju oznaku</string>
+		<string name="PreferencesItemInputRememberLastSubOff">Posljednja oznaka neće biti upamćena</string>
+		<string name="PreferencesItemInputRememberLastSubOn">Posljednja oznaka će automatski biti unesena</string>
+		<string name="PreferencesItemSecurityPasswordEnabled">Pitaj za lozinku</string>
+		<string name="PreferencesItemSecurityPasswordEnabledSubOff">Lozinka nije potrebna</string>
+		<string name="PreferencesItemSecurityPasswordEnabledSubOn">Lozinka je potrebna. Napomena: Ako zaboraviš svoju lozinku, nećeš moći pristupiti svojim unosima!</string>
+		<string name="PreferencesItemSecurityPassword">Postavi lozinku</string>
+		<string name="PreferencesItemSecurityPasswordSub">Izaberi dobru lozinku</string>
+		
+		<string name="SearchHint">Pretraži Dnevnik</string>
+		<string name="SearchDescription">Pretraži Dnevnik za oznake i unose.</string>
+		<string name="SearchNoMatches">Nema rezultata</string>
+		<string name="SearchContainingTag">Oznake koje sadrže tražen sadržaj</string>
+		<string name="SearchContainingText">Unosi koji sadrže tražen sadržaj</string>
+		
+		<string name="AboutTitle">O programu</string>
+		<string name="AboutAppTitle">Informacije o aplikaciji</string>
+		<string name="AboutAppName">Ime</string>
+		<string name="AboutAppWebsite">Forum link</string>
+		<string name="AboutPackageName">Ime paketa</string>
+		<string name="AboutAppVersion">Verzija</string>
+		<string name="AboutAppAuthor">Autor</string>
+		<string name="AboutAppAuthorEmail">Kontaktiraj autora putem e-maila</string>
+		<string name="AboutAppMarket">Prikaži aplikaciju na Marketu</string>
+		<string name="AboutAppAuthorMarket">Prikaži autora na Marketu</string>
+		<string name="AboutAppSourceCode">Izvorni kod</string>
+		<string name="AboutAAV">Android@Vidi</string>
+		<string name="AboutAAVText">
+		Ova aplikacija je bila prijavljena na Android@Vidi natjecanje održano od strane hrvatskog
+		informatičkog časopisa Vidi. Više informacija na http://android.vidilab.com
+		</string>
+		<string name="AboutJournaling">Kratak vodič</string>
+		<string name="AboutJournalingText">
+		<i>(Mnogo je razloga zašto bi netko vodio dnevnik. U slučaju da želiš pročitati nešto na ovu temu, ovdje se nalazi odličan
+		članak : http://ririanproject.com/2006/09/22/10-reasons-to-keep-a-journal)</i>\nCilj
+		ove aplikacije je da ti ponudi malen i fleksibilan notes u koji možeš unositi svoje misli, opažanja i važne
+		događaje. Dajući ti mogućnost da pišeš unose iz svakog dijela svog uređaja, omogućuje ti da u hodu pišeš unose. 
+		A kako bi stvari ostale organizirane, svaki unos možeš označiti tako da oni koji imaju srodan sadržaj 
+		(na primjer oni koje bi mogli svrstati pod <i>Vicevi</i>) mogu biti pročitani u nizu jednostavnim klikom na jedan 
+		od njih..\nSa 
+		ovom aplikacijom možeš pratiti važne događaje u svom životu, dobiti bolji uvid u vlastite misli i brzo zapisati stvari koje bi inače
+		bile zaboravljene.
+		</string>
+		
+		<string name="SingleItemEntry">Unos</string>
+		<string name="SingleItemTimestamp">Zapisan</string>
+		<string name="SingleItemTag">Oznaka</string>
+		<string name="SingleItemSameTag">Slični unosi</string>
+		
+		<string name="SingleItemViewNoData">Hmm, izgleda da podaci nisu bili proslijeđeni ovoj komponenti.\n
+		Ovo se <b>nikad</b> ne bi smjelo dogoditi u normalnim okolnostima..\n
+		Molim te, prijavi grešku putem maila na psegina@ymail.com</string>
+		
+		<string name="Confirm">Potvrdi</string>
+		<string name="Cancel">Odustani</string>
+		
+		<string name="CopiedToClipboard">Tvoj unos je kopiran u međuspremnik i sada može biti zalijepljen bilo gdje..</string>
+
+		<string name="MenuAbout">O programu</string>
+		<string name="MenuPreferences">Postavke</string>
+		<string name="MenuSupport">Podrška</string>
+		<string name="MenuSearch">Pretraga</string>
+		
+		<string name="SupportTitle">Podrška</string>
+		<string name="SupportIntro">Uvod</string>
+		<string name="SupportIntroText">Dnevnik (com.psegina.journal) je besplatna aplikacija otvorenog koda rađena prvenstveno u slobodno vrijeme 
+		njenog tvorca.. Kako bi htio naučiti više o Androidu i programiranju općenito, htio bi da mi pomogneš učiniti ovu aplikaciju što boljom.
+		Zato se na ovoj strani nalazi nekoliko načina na koje ti kao korisnik možeš pridonijeti razvoju.
+		</string>
+		<string name="SupportBugReporting">Prijedlozi i prijave greški</string>
+		<string name="SupportBugReportingText">Vjerovao ili ne, glas svakog korisnika se cijeni. Ako imaš ideju za koju misliš da bi trebala biti implementirana
+		ili imaš neke prijedloge kako poboljšati ovu aplikaciju, slobodno mi javi ili putem komentara na Android Marketu ili slanjem emaila!\nTakođer,  
+		ako naiđeš na neku grešku ili nešto ne radi kako spada, javi mi tako da to mogu što brže ispraviti!</string>
+		<string name="SupportTranslate">Prijevodi</string>
+		<string name="SupportTranslateText">Android je otvorena platforma koja se koristi diljem svijeta i njegovi korisnici se rabe raznovrsnim jezicima. 
+		Pa ako imaš neke dobre prevodilačke sposobnosti i htio bi prevesti ovu aplikaciju, slobodno me kontaktiraj!</string>
+		<string name="SupportContributeToTheSource">Pridonošenje izvornom kodu</string>
+		<string name="SupportContributeToTheSourceText">Također, ako se baviš programiranjem i misliš da bi neke stvari mogle biti bolje izvedene, 
+		slobodno pogledaj izvorni kod dostupan na gitHubu. I dobiš kakvu dobru ideju, javi mi izmjene!</string>
+		<string name="SupportDonate">Donacije</string>
+		<string name="SupportDonateText">Naposlijetku, ako želiš pomoći ovom projektu putem donacija, možeš to učiniti putem servisa AlertPay. Svaki doprinos pomaže!</string>
+</resources>
