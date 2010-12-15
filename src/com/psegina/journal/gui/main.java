@@ -157,9 +157,11 @@ public class main extends Activity {
     	case R.id.MainMenuAbout:
     		startActivity(ABOUT);
     		return true;
+    	/*
     	case R.id.MainMenuSearch:
     		startActivity(SEARCH);
     		return true;
+ 		*/
     	default:
     		Toast.makeText(getApplicationContext(), "Not handled", Toast.LENGTH_SHORT).show();
     		return false;
