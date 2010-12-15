@@ -91,6 +91,7 @@
 		bile zaboravljene.
 		</string>
 		
+		<string name="SingleItemTitle">Prikazujem detalje za unos broj</string>
 		<string name="SingleItemEntry">Unos</string>
 		<string name="SingleItemTimestamp">Zapisan</string>
 		<string name="SingleItemTag">Oznaka</string>

@@ -91,6 +91,7 @@
 		that you would usually forget.
 		</string>
 		
+		<string name="SingleItemTitle">Showing details for entry #</string>
 		<string name="SingleItemEntry">Entry</string>
 		<string name="SingleItemTimestamp">Submitted on</string>
 		<string name="SingleItemTag">Tag</string>
