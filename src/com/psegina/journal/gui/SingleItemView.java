@@ -34,7 +34,7 @@ public class SingleItemView extends Activity {
 		}
 		else{
 			setContentView(R.layout.single_item_view);
-			setTitle("Showing details for entry #"+getIntent().getLongExtra(Database.KEY_ID,1));
+			setTitle(getString(R.string.SingleItemTitle)+" "+getIntent().getLongExtra(Database.KEY_ID,1));
 			JournalEntry entry = JournalEntry.getById(getIntent().getLongExtra(Database.KEY_ID, 1));
 			ListView list =  (ListView) findViewById(R.id.singleItemSimilarList);
 
@@ -48,8 +48,7 @@ public class SingleItemView extends Activity {
 			 */
 			( (TextView) findViewById(R.id.singleItemDate) )
 				.setText( DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.LONG)
-						.format(new Date(entry.getTimestamp())) );
-			Log.e("TIMESTAMP", ""+entry.getTimestamp());
+						.format( new Date(entry.getTimestamp()) ) );
 			/*
 			 * Set the tag label
 			 */
