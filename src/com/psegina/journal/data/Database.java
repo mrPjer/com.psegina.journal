@@ -130,6 +130,10 @@ public class Database {
 		return result;
 	}
 	
+	public Cursor getCursorByTag(String tag){
+		return mDB.query(TABLE_NAME, null, KEY_TAG+"=\""+tag+"\"",	null, null, null, null);
+	}
+	
 	public JournalEntry[] getEntriesByTag(String tag){
 		Cursor c = mDB.query(TABLE_NAME, null, KEY_TAG+"=\""+tag+"\"",	null, null, null, null);
 		int rowCount = c.getCount();

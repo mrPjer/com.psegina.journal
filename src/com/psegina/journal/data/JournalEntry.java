@@ -80,17 +80,24 @@ public class JournalEntry {
 		return mDB.getAll();
 	}
 	
+	/**
+	 * 
+	 * @return an array of all entries from the database
+	 */
 	public static JournalEntry[] getAll(){
 		Cursor c = getEntries();
 		int count = c.getCount();
 		JournalEntry[] result = new JournalEntry[count];
 		if(c.moveToFirst())
 			for(int i=0; i<count; i++){
-				result[i].setBody(c.getString(c.getColumnIndex(Database.KEY_BODY)));
-				result[i].setExtra(c.getString(c.getColumnIndex(Database.KEY_EXTRA)));
-				result[i].setId(c.getLong(c.getColumnIndex(Database.KEY_ID)));
-				result[i].setTags(c.getString(c.getColumnIndex(Database.KEY_TAG)));
-				result[i].setTimestamp(c.getLong(c.getColumnIndex(Database.KEY_TIMESTAMP)));
+				JournalEntry row = new JournalEntry();
+				
+				row.setBody(c.getString(c.getColumnIndex(Database.KEY_BODY)));
+				row.setExtra(c.getString(c.getColumnIndex(Database.KEY_EXTRA)));
+				row.setId(c.getLong(c.getColumnIndex(Database.KEY_ID)));
+				row.setTags(c.getString(c.getColumnIndex(Database.KEY_TAG)));
+				row.setTimestamp(c.getLong(c.getColumnIndex(Database.KEY_TIMESTAMP)));
+				result[i] = row;
 				c.moveToNext();
 			}
 		
@@ -118,6 +125,10 @@ public class JournalEntry {
 	
 	public static JournalEntry[] getByTag(String tag){
 		return mDB.getEntriesByTag(tag);
+	}
+	
+	public static Cursor getCursorByTag(String tag){
+		return mDB.getCursorByTag(tag);
 	}
 	
 	/*

@@ -1,21 +1,21 @@
-/**
- * 
- */
 package com.psegina.journal.gui;
 
 import java.text.DateFormat;
 import java.util.Date;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.psegina.journal.R;
 import com.psegina.journal.data.Database;
+import com.psegina.journal.data.EntriesCursorAdapter;
 import com.psegina.journal.data.JournalEntry;
 
 
@@ -46,7 +46,10 @@ public class SingleItemView extends Activity {
 			/*
 			 * Set the date and hour labels
 			 */
-			( (TextView) findViewById(R.id.singleItemDate) ).setText( DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.LONG).format(new Date(entry.getTimestamp())) );
+			( (TextView) findViewById(R.id.singleItemDate) )
+				.setText( DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.LONG)
+						.format(new Date(entry.getTimestamp())) );
+			Log.e("TIMESTAMP", ""+entry.getTimestamp());
 			/*
 			 * Set the tag label
 			 */
@@ -54,17 +57,26 @@ public class SingleItemView extends Activity {
 			/*
 			 * Fill the "Same tag" field
 			 */
-			final JournalEntry[] similar = JournalEntry.getByTag(entry.getTags());
-			ArrayAdapter<JournalEntry> similarAdapter = new ArrayAdapter<JournalEntry>(this, android.R.layout.simple_list_item_1,similar) {
+			list.setAdapter(new EntriesCursorAdapter(this, JournalEntry.getCursorByTag(entry.getTags()), true));
+			
+			/*
+			 * The following is copied from main.java
+			 * so perhaps there is a way to externalize
+			 * this
+			 */
+			
+	        list.setOnItemClickListener(new OnItemClickListener() {
 				@Override
-				public View getView(int position, View convertView, ViewGroup parent) {
-
-				TextView view = (TextView) super.getView(position, convertView, parent);
-				view.setText(similar[position].getBody());
-				return view;
+				public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+						long arg3) {
+					Intent i = new Intent(getApplicationContext(), SingleItemView.class);
+					i.putExtra(Database.KEY_ID, arg3);
+					startActivity(i);
 				}
-				};
-			list.setAdapter(similarAdapter);
+			});
+			
+	        
+	        
 		}
 	}
 

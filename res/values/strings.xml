@@ -11,6 +11,7 @@
 		<string name="QuickInputSubmitNoBody">You haven\'t written anything that could be saved!</string>
 		<string name="QuickInputUpdated">The entry has been updated.</string>
 
+		<string name="MainTitle">Your latest entries</string>
 		<string name="MainNewButtonLabel">New Entry</string>
 		<string name="MainNoEntries">
 		Welcome to your Journal!\n\n

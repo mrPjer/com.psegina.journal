@@ -29,6 +29,7 @@ import com.psegina.journal.App;
 import com.psegina.journal.R;
 import com.psegina.journal.data.Database;
 import com.psegina.journal.data.EntriesCursorAdapter;
+import com.psegina.journal.data.EntryArrayAdapter;
 import com.psegina.journal.data.JournalEntry;
 import com.psegina.journal.data.JournalPaginator;
 
@@ -74,7 +75,7 @@ public class main extends Activity {
 	
    private static Button mButtonNew;
    private Cursor mCursor;
-   private ListAdapter mListAdapter;
+   private EntriesCursorAdapter mListAdapter;
    private ListView mListView;
    private OnMenuItemClickListener mMenuItemClickListener; 
    private JournalPaginator paginator = new JournalPaginator();
@@ -132,6 +133,8 @@ public class main extends Activity {
     @Override
     public void onResume(){
     	super.onResume();
+    	//mCursor.requery();
+    	//mListAdapter.notifyDataSetChanged();
     	buildList();
     }
     
@@ -220,17 +223,17 @@ public class main extends Activity {
     }
     
     public void buildList(){
-    	paginator.setSource(JournalEntry.getAll());
-    	paginator.reloadPreferences();
-    	ArrayAdapter aa = new ArrayAdapter<JournalEntry>(this, android.R.layout.simple_list_item_1, paginator.getEntries());
-    	mListView.setAdapter(aa);
+    	//paginator.setSource(JournalEntry.getAll());
+    	//paginator.reloadPreferences();
+    	//mListView.setAdapter( new EntryArrayAdapter(getApplicationContext(), R.layout.main, paginator.getEntries() ) );
     	
-    	/*
+    	
     	mCursor = JournalEntry.getEntries();
-    	mListAdapter = new EntriesCursorAdapter(this, mCursor);
+    	startManagingCursor(mCursor);
+    	mListAdapter = new EntriesCursorAdapter(this, mCursor, true);
         mListView.setAdapter(mListAdapter);
-        */
-        setTitle("Your latest entries ("+mCursor.getCount()+")");
+        
+        setTitle(getString(R.string.MainTitle) + " ("+mCursor.getCount()+")");
     }
     
 }
