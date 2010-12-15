@@ -84,7 +84,7 @@
   		android:text="@string/app_author_email"
   		/>
   	</LinearLayout>
-
+<!--
   	  	  <LinearLayout
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
   		android:text="@string/app_website"
   		/>
   	</LinearLayout>
-  	
+-->
   	  <LinearLayout
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
