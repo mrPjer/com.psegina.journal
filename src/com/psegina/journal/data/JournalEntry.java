@@ -225,4 +225,29 @@ public class JournalEntry {
 		return mExtra;
 	}
 	
+	/**
+	 * A static nested class that provides methods for
+	 * building JournalEntry objects from various sources.
+	 * @author Petar Šegina <psegina@ymail.com>
+	 *
+	 */
+	public static class Builder{
+		/**
+		 * Builds a JournalEntry object from a Cursor pointing
+		 * to a properly formated table row.
+		 * @param c Cursor pointing to an entry in a properly formated table
+		 * @return A valid JournalEntry with data from the Cursor
+		 */
+		public static JournalEntry fromCursor(Cursor c){
+			JournalEntry result = new JournalEntry();
+			result.setBody(c.getString(c.getColumnIndex(Database.KEY_BODY)));
+			result.setExtra(c.getString(c.getColumnIndex(Database.KEY_EXTRA)));
+			result.setId(c.getLong(c.getColumnIndex(Database.KEY_ID)));
+			result.setTags(c.getString(c.getColumnIndex(Database.KEY_TAG)));
+			result.setTimestamp(c.getLong(c.getColumnIndex(Database.KEY_TIMESTAMP)));
+			return result;
+		}
+		
+	}
+	
 }
