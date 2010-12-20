@@ -121,11 +121,7 @@ public class Database {
 		Cursor c = mDB.query(TABLE_NAME, null, KEY_ID+"="+id, null, null, null, null);
 		if((c.getCount()==0) || (!c.moveToFirst()))
 			throw new SQLException("DB :: Entry with key "+id+ " not found!");
-		JournalEntry result = new JournalEntry();
-		result.setBody(c.getString(c.getColumnIndex(KEY_BODY)));
-		result.setExtra(c.getString(c.getColumnIndex(KEY_EXTRA)));
-		result.setTags(c.getString(c.getColumnIndex(KEY_TAG)));
-		result.setTimestamp(c.getLong(c.getColumnIndex(KEY_TIMESTAMP)));
+		JournalEntry result = JournalEntry.Builder.fromCursor(c);
 		c.close();
 		return result;
 	}
@@ -140,12 +136,7 @@ public class Database {
 		JournalEntry[] result = new JournalEntry[rowCount];
 		c.moveToFirst();
 		for(int i=0;i<rowCount; i++){
-			JournalEntry row = new JournalEntry();
-			row.setBody(c.getString(c.getColumnIndex(KEY_BODY)));
-			row.setExtra(c.getString(c.getColumnIndex(KEY_EXTRA)));
-			row.setTags(c.getString(c.getColumnIndex(KEY_TAG)));
-			row.setTimestamp(c.getLong(c.getColumnIndex(KEY_TIMESTAMP)));
-			row.setId(c.getLong(c.getColumnIndex(KEY_ID)));
+			JournalEntry row = JournalEntry.Builder.fromCursor(c);
 			result[i] = row;
 			c.moveToNext();
 		}
