@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Reserved ids for views that need to display JournalEntry objects -->
+	<item type="id" name="JournalEntry_Body" />
+	<item type="id" name="JournalEntry_Extra" />
+	<item type="id" name="JournalEntry_Tags" />
+	<item type="id" name="JournalEntry_Id" />
+	<item type="id" name="JournalEntry_Timestamp" />
+</resources>

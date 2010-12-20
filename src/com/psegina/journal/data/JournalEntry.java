@@ -3,8 +3,12 @@ package com.psegina.journal.data;
 import java.sql.SQLException;
 import java.util.Date;
 
+import com.psegina.journal.R;
+
 import android.database.Cursor;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 /**
  * A class that represents a single JournalEntry, but also
@@ -248,6 +252,29 @@ public class JournalEntry {
 			return result;
 		}
 		
+	}
+	
+	/**
+	 * A static nested class that provides methods for
+	 * filling out Views with data from a JournalEntry object
+	 * @author Petar Šegina <psegina@ymail.com>
+	 *
+	 */
+	public static class ViewBuilder{
+		/**
+		 * Fills the View with data from a JournalEntry
+		 * @param v View to fill with data
+		 * @param entry JournalEntry from which to get the data
+		 * @return A View filled with data from entry
+		 */
+		public static View populateView(View v, JournalEntry entry){
+			( (TextView) v.findViewById(R.id.JournalEntry_Body) ).setText(entry.getBody());
+			( (TextView) v.findViewById(R.id.JournalEntry_Extra) ).setText(entry.getExtra());
+			( (TextView) v.findViewById(R.id.JournalEntry_Tags) ).setText(entry.getTags());
+			( (TextView) v.findViewById(R.id.JournalEntry_Id) ).setText(Long.toString(entry.getId()));
+			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp) ).setText(Long.toString(entry.getTimestamp()));
+			return v;
+		}
 	}
 	
 }
