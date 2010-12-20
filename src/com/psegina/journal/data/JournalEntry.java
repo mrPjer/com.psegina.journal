@@ -94,13 +94,7 @@ public class JournalEntry {
 		JournalEntry[] result = new JournalEntry[count];
 		if(c.moveToFirst())
 			for(int i=0; i<count; i++){
-				JournalEntry row = new JournalEntry();
-				
-				row.setBody(c.getString(c.getColumnIndex(Database.KEY_BODY)));
-				row.setExtra(c.getString(c.getColumnIndex(Database.KEY_EXTRA)));
-				row.setId(c.getLong(c.getColumnIndex(Database.KEY_ID)));
-				row.setTags(c.getString(c.getColumnIndex(Database.KEY_TAG)));
-				row.setTimestamp(c.getLong(c.getColumnIndex(Database.KEY_TIMESTAMP)));
+				JournalEntry row = JournalEntry.Builder.fromCursor(c);
 				result[i] = row;
 				c.moveToNext();
 			}
@@ -114,11 +108,7 @@ public class JournalEntry {
 		JournalEntry result = new JournalEntry();
 		try {
 			Cursor c = mDB.getSpecific(id);
-			result.setBody(c.getString(c.getColumnIndex(Database.KEY_BODY)));
-			result.setExtra(c.getString(c.getColumnIndex(Database.KEY_EXTRA)));
-			result.setTags(c.getString(c.getColumnIndex(Database.KEY_TAG)));
-			result.setTimestamp(c.getLong(c.getColumnIndex(Database.KEY_TIMESTAMP)));
-			result.setId(c.getLong(c.getColumnIndex(Database.KEY_ID)));
+			result = JournalEntry.Builder.fromCursor(c);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
