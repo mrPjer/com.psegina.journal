@@ -270,11 +270,25 @@ public class JournalEntry {
 			/*
 			 * Fill out the View
 			 */
-			( (TextView) v.findViewById(R.id.JournalEntry_Body) ).setText(body);
-			// ( (TextView) v.findViewById(R.id.JournalEntry_Extra) ).setText(entry.getExtra());
-			( (TextView) v.findViewById(R.id.JournalEntry_Tags) ).setText(entry.getTags());
-			( (TextView) v.findViewById(R.id.JournalEntry_Id) ).setText(Long.toString(entry.getId()));
-			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp) ).setText(Long.toString(entry.getTimestamp()));
+			TextView view;
+			view = (TextView) v.findViewById(R.id.JournalEntry_Body);
+			if(view != null)
+				view.setText(body);
+			view = (TextView) v.findViewById(R.id.JournalEntry_Extra);
+			if(view != null)
+				view.setText(entry.getExtra());
+			view = (TextView) v.findViewById(R.id.JournalEntry_Tags);
+			if(view != null)
+				view.setText(entry.getTags());
+			view = (TextView) v.findViewById(R.id.JournalEntry_Id);
+			if(view != null)
+				view.setText(Long.toString(entry.getId()));
+			view = (TextView) v.findViewById(R.id.JournalEntry_Timestamp);
+			if(view != null)
+				view.setText(Long.toString(entry.getTimestamp()));
+			
+			body = null;
+			view = null;
 			return v;
 		}
 	}
