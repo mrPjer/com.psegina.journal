@@ -3,6 +3,7 @@ package com.psegina.journal.data;
 import java.sql.SQLException;
 import java.util.Date;
 
+import com.psegina.journal.App;
 import com.psegina.journal.R;
 
 import android.database.Cursor;
@@ -258,8 +259,19 @@ public class JournalEntry {
 		 * @return A View filled with data from entry
 		 */
 		public static View populateView(View v, JournalEntry entry){
-			( (TextView) v.findViewById(R.id.JournalEntry_Body) ).setText(entry.getBody());
-			( (TextView) v.findViewById(R.id.JournalEntry_Extra) ).setText(entry.getExtra());
+			/*
+			 * Check in the preferences whether the body of the Entry
+			 * should be shortened before display
+			 */
+			String body = entry.getBody();
+			if( ( App.Prefs.shorten() ) && (body.length() > App.Prefs.shortLength()) )
+				body = body.substring(0, App.Prefs.shortLength()) + App.getContext().getString(R.string.EntryClickForMore);
+			
+			/*
+			 * Fill out the View
+			 */
+			( (TextView) v.findViewById(R.id.JournalEntry_Body) ).setText(body);
+			// ( (TextView) v.findViewById(R.id.JournalEntry_Extra) ).setText(entry.getExtra());
 			( (TextView) v.findViewById(R.id.JournalEntry_Tags) ).setText(entry.getTags());
 			( (TextView) v.findViewById(R.id.JournalEntry_Id) ).setText(Long.toString(entry.getId()));
 			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp) ).setText(Long.toString(entry.getTimestamp()));
