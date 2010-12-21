@@ -12,7 +12,7 @@
   	<TextView
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
-  		android:id="@+id/EntryItemTimestamp"
+  		android:id="@id/JournalEntry_Timestamp"
   		android:gravity="right"
   		style="?android:attr/listSeparatorTextViewStyle"
   		android:textColor="#c1ddff"
@@ -22,7 +22,7 @@
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/EntryItemTagField"
+			android:id="@id/JournalEntry_Tags"
 			android:textStyle="bold"
 			android:gravity="right"
 			android:paddingTop="2dp"
@@ -36,15 +36,14 @@
   		android:layout_height="wrap_content"
   		android:autoLink="web|email"
   		android:textColor="#fff"
-  		android:id="@+id/EntryItemText"
+  		android:id="@id/JournalEntry_Body"
   		/>
-  	<!--
+  	
   	<TextView
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
-  		android:visibility="visible"
-  		android:id="@+id/EntryItemId"
+  		android:visibility="gone"
+  		android:id="@id/JournalEntry_Id"
   		/>
-  		-->
-
+  	
 </LinearLayout>
