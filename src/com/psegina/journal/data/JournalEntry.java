@@ -1,6 +1,7 @@
 package com.psegina.journal.data;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.util.Date;
 
 import com.psegina.journal.App;
@@ -289,6 +290,21 @@ public class JournalEntry {
 			
 			body = null;
 			view = null;
+			return v;
+		}
+		
+		/**
+		 * Fills the View with data from a JournalEntry and
+		 * formats the timestamp
+		 * @param v View to fill with data
+		 * @param entry JournalEntry from which to get the data
+		 * @param timeFormat one of the DateFormat formatting constants.
+		 * @return View with data filled out
+		 */
+		public static View populateView(View v, JournalEntry entry, int timeFormat){
+			v = populateView(v, entry);
+			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
+					(DateFormat.getDateInstance(timeFormat).format(new Date(entry.getTimestamp())));
 			return v;
 		}
 	}
