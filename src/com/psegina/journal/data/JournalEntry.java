@@ -145,8 +145,7 @@ public class JournalEntry {
 	 * @param time Time to set to the timestamp
 	 */
 	public void setTimestamp(long time){
-		Date date = new Date();
-		mTimestamp = date.getTime();
+		mTimestamp = time;
 	}
 	
 	/**
@@ -304,7 +303,7 @@ public class JournalEntry {
 		public static View populateView(View v, JournalEntry entry, int timeFormat){
 			v = populateView(v, entry);
 			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
-					(DateFormat.getDateInstance(timeFormat).format(new Date(entry.getTimestamp())));
+					((DateFormat.getDateInstance(timeFormat)).format(entry.getTimestamp()*1000));
 			return v;
 		}
 	}
