@@ -15,7 +15,7 @@
   	<TextView
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
-  		android:id="@+id/singleItemBody"
+  		android:id="@id/JournalEntry_Body"
   		/>
 
   	<TextView
@@ -28,8 +28,7 @@
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
   		android:gravity="right"
-  		android:id="@+id/singleItemDate"
-  		android:text="Sunday, 21 December, 1992"
+  		android:id="@id/JournalEntry_Timestamp"
   		/>
 
   	<TextView
@@ -42,7 +41,7 @@
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
   		android:gravity="right"
-  		android:id="@+id/singleItemTag"
+  		android:id="@id/JournalEntry_Tags"
   		/>
 
   	<TextView

@@ -38,21 +38,12 @@ public class SingleItemView extends Activity {
 			JournalEntry entry = JournalEntry.getById(getIntent().getLongExtra(Database.KEY_ID, 1));
 			ListView list =  (ListView) findViewById(R.id.singleItemSimilarList);
 
-			list.addHeaderView(getLayoutInflater().inflate(R.layout.single_item_view_head, null));
-			/*
-			 * Set the body
-			 */
-			( (TextView) findViewById(R.id.singleItemBody)).setText(""+entry.getBody());
-			/*
-			 * Set the date and hour labels
-			 */
-			( (TextView) findViewById(R.id.singleItemDate) )
-				.setText( DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.LONG)
-						.format( new Date(entry.getTimestamp()) ) );
-			/*
-			 * Set the tag label
-			 */
-			( (TextView) findViewById(R.id.singleItemTag) ).setText(""+entry.getTags());
+			list.addHeaderView(
+					JournalEntry.ViewBuilder.populateView(
+							getLayoutInflater().inflate(R.layout.single_item_view_head, null),
+							entry, DateFormat.FULL, DateFormat.FULL)
+			);
+			
 			/*
 			 * Fill the "Same tag" field
 			 */
@@ -74,8 +65,6 @@ public class SingleItemView extends Activity {
 				}
 			});
 			
-	        
-	        
 		}
 	}
 
