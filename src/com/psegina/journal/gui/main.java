@@ -18,9 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +27,6 @@ import com.psegina.journal.App;
 import com.psegina.journal.R;
 import com.psegina.journal.data.Database;
 import com.psegina.journal.data.EntriesCursorAdapter;
-import com.psegina.journal.data.EntryArrayAdapter;
 import com.psegina.journal.data.JournalEntry;
 import com.psegina.journal.data.JournalPaginator;
 
