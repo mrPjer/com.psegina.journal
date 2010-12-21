@@ -30,24 +30,6 @@ import com.psegina.journal.data.EntriesCursorAdapter;
 import com.psegina.journal.data.JournalEntry;
 import com.psegina.journal.data.JournalPaginator;
 
-/*
- * TODO
- * Create the Menu
- * 		About
- * 		Back up and restore
- * Create the methods for loading the items from the
- * 		database and displaying them in a timeline with entries
- * 		grouped by days.
- * Add an onClick handler to the list so that when the user
- * 		clicks an item, he will be taken to a list of all entries with
- * 		the same tag
- * 		-> Think about how to handle this with multiple tags
- * Fix the refresh after submitting
- * Make a view that will be loaded as default if no entries
- * 		are present. This view should contain a basic tutorial
- * 		with information about the app.
- */
-
 /**
  * Main Activity class
  * This is the activity that is launched when
