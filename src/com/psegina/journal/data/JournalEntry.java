@@ -294,16 +294,32 @@ public class JournalEntry {
 		
 		/**
 		 * Fills the View with data from a JournalEntry and
-		 * formats the timestamp
+		 * formats the timestamp with date only
 		 * @param v View to fill with data
 		 * @param entry JournalEntry from which to get the data
-		 * @param timeFormat one of the DateFormat formatting constants.
+		 * @param dateFormat one of the DateFormat formatting constants.
 		 * @return View with data filled out
 		 */
-		public static View populateView(View v, JournalEntry entry, int timeFormat){
+		public static View populateView(View v, JournalEntry entry, int dateFormat){
 			v = populateView(v, entry);
 			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
-					((DateFormat.getDateInstance(timeFormat)).format(entry.getTimestamp()*1000));
+					((DateFormat.getDateInstance(dateFormat)).format(entry.getTimestamp()*1000));
+			return v;
+		}
+		
+		/**
+		 * Fills the View with data from a JournalEntry and
+		 * formats the timestamp with date and time
+		 * @param v View to fill with data
+		 * @param entry JournalEntry from which to get the data
+		 * @param dateFormat one of the DateFormat formatting constants
+		 * @param timeFormat one of the DateFormat formatting constants.
+		 * @return View with data filled out
+		 */	
+		public static View populateView(View v, JournalEntry entry, int dateFormat, int timeFormat){
+			v = populateView(v, entry);
+			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
+			((DateFormat.getDateTimeInstance(dateFormat, timeFormat)).format(entry.getTimestamp()*1000));				
 			return v;
 		}
 	}
