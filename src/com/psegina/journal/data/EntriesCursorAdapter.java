@@ -36,7 +36,9 @@ public class EntriesCursorAdapter extends CursorAdapter {
 
 	@Override
 	public void bindView(View view, Context context, Cursor cursor){
-		view = JournalEntry.ViewBuilder.populateView(view, JournalEntry.Builder.fromCursor(cursor), DateFormat.FULL);
+		JournalEntry.ViewBuilder builder = new JournalEntry.ViewBuilder();
+		builder.setDateFormat(DateFormat.FULL);
+		view = builder.populateView(view, JournalEntry.Builder.fromCursor(cursor));
 	}
 	
 	private boolean isNewGroup(Cursor cursor, int position){

@@ -2,15 +2,14 @@ package com.psegina.journal.data;
 
 import java.sql.SQLException;
 import java.text.DateFormat;
-import java.util.Date;
-
-import com.psegina.journal.App;
-import com.psegina.journal.R;
 
 import android.database.Cursor;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.psegina.journal.App;
+import com.psegina.journal.R;
 
 /**
  * A class that represents a single JournalEntry, but also
@@ -252,20 +251,42 @@ public class JournalEntry {
 	 *
 	 */
 	public static class ViewBuilder{
+		private boolean mShorten = true;
+		private int mDateFormat = DateFormat.FULL;
+		private int mTimeFormat = -1;
+		
+		public void setShorten(boolean shorten){
+			mShorten = shorten;
+		}
+		
+		public void setDateFormat(int dateFormat){
+			mDateFormat = dateFormat;
+		}
+		
+		public void setTimeFormat(int timeFormat){
+			mTimeFormat = timeFormat;
+		}
+		
 		/**
 		 * Fills the View with data from a JournalEntry
 		 * @param v View to fill with data
 		 * @param entry JournalEntry from which to get the data
 		 * @return A View filled with data from entry
 		 */
-		public static View populateView(View v, JournalEntry entry){
+		public View populateView(View v, JournalEntry entry){
 			/*
 			 * Check in the preferences whether the body of the Entry
 			 * should be shortened before display
 			 */
 			String body = entry.getBody();
-			if( ( App.Prefs.shorten() ) && (body.length() > App.Prefs.shortLength()) )
+			if( ( App.Prefs.shorten() ) && (body.length() > App.Prefs.shortLength()) && (mShorten))
 				body = body.substring(0, App.Prefs.shortLength()) + App.getContext().getString(R.string.EntryClickForMore);
+			
+			String timestamp = null;
+			if(mTimeFormat != -1)
+				timestamp = DateFormat.getDateTimeInstance(mDateFormat, mTimeFormat).format(entry.getTimestamp() * 1000);
+			else
+				timestamp = DateFormat.getDateInstance(mDateFormat).format(entry.getTimestamp() * 1000);
 			
 			/*
 			 * Fill out the View
@@ -285,43 +306,13 @@ public class JournalEntry {
 				view.setText(Long.toString(entry.getId()));
 			view = (TextView) v.findViewById(R.id.JournalEntry_Timestamp);
 			if(view != null)
-				view.setText(Long.toString(entry.getTimestamp()));
+				view.setText(timestamp);
 			
 			body = null;
 			view = null;
 			return v;
 		}
 		
-		/**
-		 * Fills the View with data from a JournalEntry and
-		 * formats the timestamp with date only
-		 * @param v View to fill with data
-		 * @param entry JournalEntry from which to get the data
-		 * @param dateFormat one of the DateFormat formatting constants.
-		 * @return View with data filled out
-		 */
-		public static View populateView(View v, JournalEntry entry, int dateFormat){
-			v = populateView(v, entry);
-			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
-					((DateFormat.getDateInstance(dateFormat)).format(entry.getTimestamp()*1000));
-			return v;
-		}
-		
-		/**
-		 * Fills the View with data from a JournalEntry and
-		 * formats the timestamp with date and time
-		 * @param v View to fill with data
-		 * @param entry JournalEntry from which to get the data
-		 * @param dateFormat one of the DateFormat formatting constants
-		 * @param timeFormat one of the DateFormat formatting constants.
-		 * @return View with data filled out
-		 */	
-		public static View populateView(View v, JournalEntry entry, int dateFormat, int timeFormat){
-			v = populateView(v, entry);
-			( (TextView) v.findViewById(R.id.JournalEntry_Timestamp)).setText
-			((DateFormat.getDateTimeInstance(dateFormat, timeFormat)).format(entry.getTimestamp()*1000));				
-			return v;
-		}
 	}
 	
 }

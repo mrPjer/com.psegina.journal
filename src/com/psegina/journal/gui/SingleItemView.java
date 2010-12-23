@@ -1,12 +1,10 @@
 package com.psegina.journal.gui;
 
 import java.text.DateFormat;
-import java.util.Date;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -37,11 +35,15 @@ public class SingleItemView extends Activity {
 			setTitle(getString(R.string.SingleItemTitle)+" "+getIntent().getLongExtra(Database.KEY_ID,1));
 			JournalEntry entry = JournalEntry.getById(getIntent().getLongExtra(Database.KEY_ID, 1));
 			ListView list =  (ListView) findViewById(R.id.singleItemSimilarList);
+			JournalEntry.ViewBuilder builder = new JournalEntry.ViewBuilder();
+			builder.setDateFormat(DateFormat.FULL);
+			builder.setDateFormat(DateFormat.LONG);
+			builder.setShorten(false);
 
 			list.addHeaderView(
-					JournalEntry.ViewBuilder.populateView(
+					builder.populateView(
 							getLayoutInflater().inflate(R.layout.single_item_view_head, null),
-							entry, DateFormat.FULL, DateFormat.FULL)
+							entry)
 			);
 			
 			/*
