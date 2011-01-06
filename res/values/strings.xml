@@ -5,6 +5,9 @@
 		<string name="Previous">Previous</string>
 		<string name="Next">Next</string>
 
+		<string name="PaginatorDisplayingEntries">Displaying entries</string>
+		<string name="PaginatorOf">of</string>
+
 		<string name="QuickInputTitle">New Journal entry</string>
 		<string name="QuickInputSubmit">Save</string>
 		<string name="QuickInputCancel">Cancel</string>
@@ -39,6 +42,7 @@
 		<string name="PreferencesHeaderGeneral">General settings</string>
 		<string name="PreferencesHeaderInput">Input settings</string>
 		<string name="PreferencesHeaderSecurity">Security and privacy settings</string>
+		
 		<string name="PreferencesItemGeneralShorten">Shorten entries</string>
 		<string name="PreferencesItemGeneralShortenSubOff">Entries will be shown in full length</string>
 		<string name="PreferencesItemGeneralShortenSubOn">Entries will be shown shortened</string>
@@ -46,6 +50,9 @@
 		<string name="PreferencesItemGeneralShortenAmountSub">Maximum number of characters to show</string>
 		<string name="PreferencesItemGeneralEntriesPerPage">Entries per page</string>
 		<string name="PreferencesItemGeneralEntriesPerPageSub">Number of entries to show per page</string>
+		<string name="PreferencesItemGeneralShowLocation">Show location</string>
+		<string name="PreferencesItemGeneralShowLocationSubOff">Your current location will not be show atop the main view</string>
+		<string name="PreferencesItemGeneralShowLocationSubOn">Your current location will be show atop the main view</string>
 		
 		<string name="PreferencesItemInputAutocomplete">Suggest tags</string>
 		<string name="PreferencesItemInputAutocompleteSubOff">Tags will not be suggested during input</string>

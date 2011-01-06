@@ -53,6 +53,10 @@ public class Preferences {
 		return Integer.parseInt(mPreferences.getString(App.getContext().getString(R.string.KEY_PreferencesItemGeneralShortenAmount), "200"));
 	}
 	
+	public boolean showPaginatorLocation(){
+		return mPreferences.getBoolean(App.getContext().getString(R.string.KEY_PreferencesItemShowPaginatorLocationHeader), false);
+	}
+	
 	public int entriesPerPage(){
 		return Integer.parseInt(mPreferences.getString(App.getContext().getString(R.string.KEY_PreferencesItemGeneralEntriesPerPage), "20"));
 	}

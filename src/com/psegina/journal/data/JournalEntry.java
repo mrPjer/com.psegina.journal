@@ -347,6 +347,7 @@ public class JournalEntry {
 	 */
 	public static class Paginator{
 	    	private Button mButtonPrev, mButtonNext, mButtonNew;
+	    	private TextView mStatusField;
 	    	private ListView mListView;
 	    	private int mPage = 0;
 	    	private Activity mParent;
@@ -366,12 +367,15 @@ public class JournalEntry {
 	    		mParent = activity;
 	    		
 	            mListView.setEmptyView((TextView) mParent.findViewById(android.R.id.empty));
-	            mListView.addHeaderView(mParent.getLayoutInflater().inflate(R.layout.entries_display_header, null));
+	            if(App.Prefs.showPaginatorLocation())
+	            	mListView.addHeaderView(mParent.getLayoutInflater().inflate(R.layout.entries_display_header, null));
 	            mListView.addFooterView(mParent.getLayoutInflater().inflate(R.layout.previous_next_buttons, null));
 	            
 	            mButtonPrev = (Button) mParent.findViewById(R.id.PreviousButton);
 	            mButtonNext = (Button) mParent.findViewById(R.id.NextButton);
 	            mButtonNew = (Button) mParent.findViewById(R.id.MainNewButton);
+	            
+	            mStatusField = (TextView) mParent.findViewById(R.id.EntryDisplayHeader);
 	            
 	            mButtonPrev.setOnClickListener(mButtonListener);
 	            mButtonNext.setOnClickListener(mButtonListener);
@@ -423,6 +427,15 @@ public class JournalEntry {
 	    		mButtonPrev.setClickable(!isPageFirst());
 	    		mButtonNext.setEnabled(!isPageLast());
 	    		mButtonNext.setClickable(!isPageLast());
+	    		if(mStatusField != null)
+		    		mStatusField.setText(
+		    				mParent.getString(R.string.PaginatorDisplayingEntries) + " " +
+		    				mPage*App.Prefs.entriesPerPage() +
+		    				"-" +
+		    				(mPage+1)*App.Prefs.entriesPerPage() + " " +
+		    				mParent.getString(R.string.PaginatorOf) + " " +
+		    				JournalEntry.getNumberOfEntries()
+		    				);
 	    		mListView.setAdapter(new EntriesCursorAdapter(mParent, JournalEntry.getEntries(mPage), true));
 	            mParent.setTitle(mParent.getString(R.string.MainTitle) + " ("+JournalEntry.getNumberOfEntries()+")");
 	    	}

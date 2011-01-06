@@ -11,6 +11,13 @@
   		android:defaultValue="20"
   		android:inputType="number"  />
   	<CheckBoxPreference
+  		android:title="@string/PreferencesItemGeneralShowLocation"
+  		android:summaryOff="@string/PreferencesItemGeneralShowLocationSubOff"
+  		android:summaryOn="@string/PreferencesItemGeneralShowLocationSubOn"
+  		android:disableDependentsState="false"
+  		android:key="@string/KEY:PreferencesItemShowPaginatorLocationHeader"
+  		android:defaultValue="false" />
+  	<CheckBoxPreference
   		android:title="@string/PreferencesItemGeneralShorten"
   		android:summaryOff="@string/PreferencesItemGeneralShortenSubOff"
   		android:summaryOn="@string/PreferencesItemGeneralShortenSubOn"

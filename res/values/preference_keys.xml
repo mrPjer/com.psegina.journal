@@ -8,4 +8,5 @@
 	<string name="KEY:PreferenceItemInputRememberLast">PREF_REMEMBERLAST</string>
 	<string name="KEY:PreferencesItemSecurityPassword">PREF_PASSWORD</string>
 	<string name="KEY:PreferencesItemLastSavedTag">PREF_LASTTAG</string>
+	<string name="KEY:PreferencesItemShowPaginatorLocationHeader">PREF_PAGLOCATION</string>
 </resources>
