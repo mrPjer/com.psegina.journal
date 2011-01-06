@@ -34,11 +34,11 @@ public class App extends Application{
 		mContext = getApplicationContext();
 		Prefs = new Preferences(PreferenceManager.getDefaultSharedPreferences(mContext));
 		
-		QUICK_INPUT = new Intent(mContext, QuickInput.class);
-		SUPPORT = new Intent(mContext, Support.class);
-		PREFERENCES = new Intent(mContext, Preferences.class);
-		ABOUT = new Intent(mContext, About.class);
-		SEARCH = new Intent(mContext, Search.class);
+		QUICK_INPUT = new Intent(mContext, com.psegina.journal.gui.QuickInput.class);
+		SUPPORT = new Intent(mContext, com.psegina.journal.gui.Support.class);
+		PREFERENCES = new Intent(mContext, com.psegina.journal.gui.Preferences.class);
+		ABOUT = new Intent(mContext, com.psegina.journal.gui.About.class);
+		SEARCH = new Intent(mContext, com.psegina.journal.gui.Search.class);
 	}
 	
 	
