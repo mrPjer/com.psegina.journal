@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.psegina.journal.App;
 
@@ -98,6 +99,11 @@ public class Database {
 		return tm;
 	}
 
+	public Cursor getByPage (int page){
+		int n = App.Prefs.entriesPerPage();
+		return mDB.query(TABLE_NAME, null, null, null, null, null, KEY_TIMESTAMP+" DESC", page*n+","+n);
+	}
+	
 	/**
 	 * Get a cursor pointing to a specific entry
 	 * @param id The id of the entry to point the cursor to

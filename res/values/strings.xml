@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">Journal</string>
 
+		<string name="Previous">Previous</string>
+		<string name="Next">Next</string>
+
 		<string name="QuickInputTitle">New Journal entry</string>
 		<string name="QuickInputSubmit">Save</string>
 		<string name="QuickInputCancel">Cancel</string>

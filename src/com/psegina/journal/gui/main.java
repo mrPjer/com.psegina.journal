@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.view.ContextMenu;
@@ -14,21 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.psegina.journal.App;
 import com.psegina.journal.R;
-import com.psegina.journal.data.Database;
-import com.psegina.journal.data.EntriesCursorAdapter;
 import com.psegina.journal.data.JournalEntry;
-import com.psegina.journal.data.JournalPaginator;
 
 /**
  * Main Activity class
@@ -46,53 +37,22 @@ public class main extends Activity {
 	private static final int ID_SHARE = 2;
 	private static final int ID_CLIPBOARD = 3;
 	
-	private static final Intent QUICK_INPUT = new Intent(App.getContext(), QuickInput.class);
-	private static final Intent SUPPORT = new Intent(App.getContext(), Support.class);
-	private static final Intent PREFERENCES = new Intent(App.getContext(), Preferences.class);
-	private static final Intent ABOUT = new Intent(App.getContext(), About.class);
-	private static final Intent SEARCH = new Intent(App.getContext(), Search.class);
+	private OnMenuItemClickListener mMenuItemClickListener; 
+
 	
-   private static Button mButtonNew;
-   private Cursor mCursor;
-   private EntriesCursorAdapter mListAdapter;
-   private ListView mListView;
-   private OnMenuItemClickListener mMenuItemClickListener; 
-   private JournalPaginator paginator = new JournalPaginator();
-   
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);     
-		
         setContentView(R.layout.main);        
+            
+        new JournalEntry.Paginator(
+        		(ListView) findViewById(R.id.MainTextView),
+        		this
+        );
         
-        mButtonNew = (Button) findViewById(R.id.MainNewButton);
-        mButtonNew.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-					startActivityForResult(QUICK_INPUT, 0);
-			}
-		});
-        
-        mListView = (ListView) findViewById(R.id.MainTextView);
-        mListView.setEmptyView((TextView) findViewById(android.R.id.empty));
-
-        buildList();
-        startManagingCursor(mCursor);
-		registerForContextMenu(mListView);
-
-        mListView.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				Intent i = new Intent(getApplicationContext(), SingleItemView.class);
-				i.putExtra(Database.KEY_ID, arg3);
-				startActivity(i);
-			}
-		});
-		
     }
-    
+	
     /**
      * We create an onKeyUp listener so that we can handle keyboard shortcuts
      */
@@ -101,7 +61,7 @@ public class main extends Activity {
     	switch(keycode){
     	case 42:
     		// "n" for "New"
-    		startActivity(QUICK_INPUT);
+    		startActivity(App.QUICK_INPUT);
     		return true;
     	default:
         	//Toast.makeText(getApplicationContext(), ""+keycode, Toast.LENGTH_SHORT).show();
@@ -109,13 +69,6 @@ public class main extends Activity {
     	}
     }
     
-    @Override
-    public void onResume(){
-    	super.onResume();
-    	//mCursor.requery();
-    	//mListAdapter.notifyDataSetChanged();
-    	buildList();
-    }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -128,13 +81,13 @@ public class main extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
     switch(item.getItemId()){
     	case R.id.MainMenuSupport:
-    		startActivity(SUPPORT);
+    		startActivity(App.SUPPORT);
     		return true;
     	case R.id.MainMenuPreferences:
-    		startActivity(PREFERENCES);
+    		startActivity(App.PREFERENCES);
     		return true;
     	case R.id.MainMenuAbout:
-    		startActivity(ABOUT);
+    		startActivity(App.ABOUT);
     		return true;
     	/*
     	case R.id.MainMenuSearch:
@@ -158,13 +111,14 @@ public class main extends Activity {
 		menu.add(0, ID_CLIPBOARD, Menu.NONE, R.string.EntryLongClickCopyToClipboard).setOnMenuItemClickListener(mMenuItemClickListener);
     }
     
+    
     @Override
     public boolean onContextItemSelected(MenuItem item){
     	final AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
     	JournalEntry selected = JournalEntry.getById(info.id);
     	switch(item.getItemId()){
     	case ID_EDIT:
-    		Intent edit = QUICK_INPUT;
+    		Intent edit = App.QUICK_INPUT;
     		edit.putExtra(QuickInput.KEY_ID, info.id);
     		edit.putExtra(QuickInput.KEY_ACTION, QuickInput.ACTION_EDIT);
     		startActivity(edit);
@@ -178,7 +132,6 @@ public class main extends Activity {
 				public void onClick(DialogInterface dialog, int which) {
 					JournalEntry.delete(info.id);
 					Toast.makeText(getApplicationContext(), R.string.EntryDeleted, Toast.LENGTH_SHORT).show();
-		    		buildList();
 				}
 			})
     		.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
@@ -201,20 +154,6 @@ public class main extends Activity {
     		break;
     	}
     	return true;
-    }
-    
-    public void buildList(){
-    	//paginator.setSource(JournalEntry.getAll());
-    	//paginator.reloadPreferences();
-    	//mListView.setAdapter( new EntryArrayAdapter(getApplicationContext(), R.layout.main, paginator.getEntries() ) );
-    	
-    	
-    	mCursor = JournalEntry.getEntries();
-    	startManagingCursor(mCursor);
-    	mListAdapter = new EntriesCursorAdapter(this, mCursor, true);
-        mListView.setAdapter(mListAdapter);
-        
-        setTitle(getString(R.string.MainTitle) + " ("+mCursor.getCount()+")");
     }
     
 }

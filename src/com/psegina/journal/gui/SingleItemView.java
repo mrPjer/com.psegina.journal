@@ -37,7 +37,7 @@ public class SingleItemView extends Activity {
 			ListView list =  (ListView) findViewById(R.id.singleItemSimilarList);
 			JournalEntry.ViewBuilder builder = new JournalEntry.ViewBuilder();
 			builder.setDateFormat(DateFormat.FULL);
-			builder.setDateFormat(DateFormat.LONG);
+			builder.setTimeFormat(DateFormat.LONG);
 			builder.setShorten(false);
 
 			list.addHeaderView(

@@ -3,13 +3,22 @@ package com.psegina.journal.data;
 import java.sql.SQLException;
 import java.text.DateFormat;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.psegina.journal.App;
 import com.psegina.journal.R;
+import com.psegina.journal.gui.SingleItemView;
 
 /**
  * A class that represents a single JournalEntry, but also
@@ -79,10 +88,24 @@ public class JournalEntry {
 	 * @return A Cursor pointing to fetched entries
 	 */
 	public static Cursor getEntries(){
-		if(mDB!=null)
 		mDB.open();
-		else Log.e("TEST", "NULL");
-		return mDB.getAll();
+		Cursor result = mDB.getAll();
+		return result;
+	}
+	
+	public static Cursor getEntries(int page){
+		mDB.open();
+		Cursor result = mDB.getByPage(page);
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @return Total number of entries in the database
+	 */
+	public static int getNumberOfEntries(){
+		mDB.open();
+		return ( mDB.getAll() ).getCount();
 	}
 	
 	/**
@@ -115,6 +138,7 @@ public class JournalEntry {
 			e.printStackTrace();
 			return null;
 		}
+		mDB.close();
 		return result;
 	}
 	
@@ -123,6 +147,7 @@ public class JournalEntry {
 	}
 	
 	public static Cursor getCursorByTag(String tag){
+		mDB.open();
 		return mDB.getCursorByTag(tag);
 	}
 	
@@ -312,7 +337,147 @@ public class JournalEntry {
 			view = null;
 			return v;
 		}
-		
+				
 	}
+	
+	/**
+	 * A class that provides a method to create a
+	 * Paginated display of JournalEntries
+	 * @author Petar Šegina <psegina@ymail.com>
+	 *
+	 */
+	public static class Paginator{
+	    	private Button mButtonPrev, mButtonNext, mButtonNew;
+	    	private ListView mListView;
+	    	private int mPage = 0;
+	    	private Activity mParent;
+	    	
+			private Paginator(){
+	    	}
+	    	
+			/**
+			 * Constructs a Paginator that applies Pagination to a
+			 * ListView
+			 * @param listView ListView to apply Pagination to
+			 * @param activity the Activity that owns listView
+			 */
+	    	public Paginator(ListView listView, Activity activity){
+	    		this();
+	    		mListView = listView;
+	    		mParent = activity;
+	    		
+	            mListView.setEmptyView((TextView) mParent.findViewById(android.R.id.empty));
+	            mListView.addHeaderView(mParent.getLayoutInflater().inflate(R.layout.entries_display_header, null));
+	            mListView.addFooterView(mParent.getLayoutInflater().inflate(R.layout.previous_next_buttons, null));
+	            
+	            mButtonPrev = (Button) mParent.findViewById(R.id.PreviousButton);
+	            mButtonNext = (Button) mParent.findViewById(R.id.NextButton);
+	            mButtonNew = (Button) mParent.findViewById(R.id.MainNewButton);
+	            
+	            mButtonPrev.setOnClickListener(mButtonListener);
+	            mButtonNext.setOnClickListener(mButtonListener);
+	            mButtonNew.setOnClickListener(mButtonListener);
+	            
+
+	    		mParent.registerForContextMenu(mListView);
+	            mListView.setOnItemClickListener(new OnItemClickListener() {
+	    			@Override
+	    			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+	    					long arg3) {
+	    				Intent i = new Intent(mParent.getApplicationContext(), SingleItemView.class);
+	    				i.putExtra(Database.KEY_ID, arg3);
+	    				mParent.startActivity(i);
+	    			}
+	    		});
+	            
+	            buildList();
+	    	}
+	    	
+	    	/**
+	    	 * 
+	    	 * @return True if Paginator is on the first page
+	    	 */
+	    	private boolean isPageFirst(){
+	    		if(mPage == 0)
+	    			return true;
+	    		else
+	    			return false;
+	    	}
+	    	
+	    	/**
+	    	 * 
+	    	 * @return True if Paginator is on the last page
+	    	 */
+	    	private boolean isPageLast(){
+	    		if( ( (mPage + 1) * App.Prefs.entriesPerPage()) > JournalEntry.getNumberOfEntries() ) 
+	    			return true;
+	    		else
+	    			return false;
+	    	}
+	    	
+	    	/**
+	    	 * Creates the Paginated list according to the
+	    	 * page the Paginator is on
+	    	 */
+	    	private void buildList(){
+	    		mButtonPrev.setEnabled(!isPageFirst());
+	    		mButtonPrev.setClickable(!isPageFirst());
+	    		mButtonNext.setEnabled(!isPageLast());
+	    		mButtonNext.setClickable(!isPageLast());
+	    		mListView.setAdapter(new EntriesCursorAdapter(mParent, JournalEntry.getEntries(mPage), true));
+	            mParent.setTitle(mParent.getString(R.string.MainTitle) + " ("+JournalEntry.getNumberOfEntries()+")");
+	    	}
+	    	
+	    	/**
+	    	 * Moves the Paginator to the next page
+	    	 */
+	    	public void PageNext(){
+	    		if(isPageLast())
+	    			throw new IllegalStateException("Can't move to next page because the Paginator is already on the last one");
+	    		mPage = mPage + 1;
+	    		buildList();
+	    	}
+	    	
+	    	/**
+	    	 * Moves the Paginator to the previous page
+	    	 */
+	    	public void PagePrev(){
+	    		if(isPageFirst())
+	    			throw new IllegalStateException("Can't move to previous page because the Paginator is already on the first one");
+	    		mPage = mPage - 1;
+	    		buildList();
+	    	}
+	    	
+	    	/**
+	    	 * Moves the Paginator to the first page
+	    	 */
+	    	public void PageHome(){
+	    		mPage = 0;
+	    		buildList();
+	    	}
+	    	
+	    	OnClickListener mButtonListener = new OnClickListener(){
+	    		@Override
+	    		public void onClick(View v) {
+	    			if(mParent == null)
+	    				throw(new IllegalStateException("mParent has not been set!"));
+	    			switch(v.getId()){
+	    			case R.id.PreviousButton:
+	    				PagePrev();
+	    				break;
+	    			case R.id.NextButton:
+	    				PageNext();
+	    				break;
+	    			case R.id.MainNewButton:
+	    				mParent.startActivityForResult(App.QUICK_INPUT, 0);
+	    				break;
+	    			default:
+	    				Toast.makeText(mParent.getApplicationContext(), "Unhandled action", Toast.LENGTH_SHORT).show();
+	    			}	
+	    		}	
+	    	};
+	    	
+	    }
+
 	
 }
