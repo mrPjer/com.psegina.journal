@@ -34,8 +34,7 @@ public class EntriesCursorAdapter extends CursorAdapter {
 
 	@Override
 	public View newView(Context context, Cursor cursor, ViewGroup parent) {
-		View v = mInflater.inflate(R.layout.entries_list_single_item, parent, false); 
-		return (v);
+		return mInflater.inflate(R.layout.entries_list_single_item, parent, false);
 	}
 
 	@Override
