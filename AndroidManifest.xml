@@ -51,6 +51,9 @@
 		        		<action android:name="android.intent.action.CAMERA_BUTTON" />
 		        		<!-- Offer to be the default action for the above filters -->
 		        		<category android:name="android.intent.category.DEFAULT" /> 
+		        		<!-- Register for the "Share" menu -->
+		        		<action android:name="android.intent.action.SEND" />
+		        		<data android:mimeType="text/plain" />
 		    			</intent-filter>
 		    </activity>
 		    

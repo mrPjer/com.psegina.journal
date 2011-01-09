@@ -20,11 +20,6 @@ import com.psegina.journal.R;
 import com.psegina.journal.data.Database;
 import com.psegina.journal.data.JournalEntry;
 
-/*
- * TODO
- * Add AutoComplete for the tag field based on existing entries
- */
-
 /**
  * QuickInput Activity Class
  * This activity is used as the interface which allows
@@ -129,14 +124,26 @@ public class QuickInput extends Activity {
 		 * Check if there was any data passed with the intent (most notably, see
 		 * if we have to update)
 		 */
-		if( ( ( (Intent) getIntent() ).hasExtra(KEY_ACTION) ) ){
-			old = JournalEntry.getById ( ( ( (Intent) getIntent() ).getExtras() ).getLong(KEY_ID) );
+		Intent i = getIntent();
+		if( ( i.hasExtra(KEY_ACTION) ) ){
+			old = JournalEntry.getById ( (i.getExtras() ).getLong(KEY_ID) );
 			mTagField.setText(old.getTags());
 			mBodyField.setText(old.getBody());
 		}
 		else
-		if( App.Prefs.restoreLastTag())
-			mTagField.setText(App.Prefs.getLastTag());
+			/*
+			 * Check if the activity has been launched from a SHARE menu
+			 * and fill out the fields accordingly
+			 */
+			if( Intent.ACTION_SEND.equals(i.getAction())){
+				if(i.hasExtra(Intent.EXTRA_TITLE))
+					mTagField.setText(i.getExtras().getString(Intent.EXTRA_TITLE));
+				if(i.hasExtra(Intent.EXTRA_TEXT))
+					mBodyField.setText(i.getExtras().getString(Intent.EXTRA_TEXT));
+			}
+		else
+			if( App.Prefs.restoreLastTag())
+				mTagField.setText(App.Prefs.getLastTag());
 	}
 	
 	@Override
